@@ -7,7 +7,10 @@ export const StyledRoundedButton = styled.label`
   /* position: absolute;
   top: 0;
   right: 0; */
-  /* z-index: 10; */
+  background: #fff;
+  border-radius: 999px;
+
+  z-index: 3;
   -webkit-tap-highlight-color: transparent;
   input[type="checkbox"].switch {
     position: absolute;
@@ -64,7 +67,7 @@ export const StyledRoundedButton = styled.label`
   }
 
   input[type="checkbox"].switch:checked + div {
-    background-color: #ee454099;
+    background-color: #ff454099;
   }
 
   input[type="checkbox"].switch + div > div {

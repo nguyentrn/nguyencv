@@ -34,5 +34,6 @@ export const TypingTextElement = styled.div`
 
 export const TypingTextContainer = styled.div`
   color: ${theme.dark};
-  font-family: "NguyenMono", monospace;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
 `;

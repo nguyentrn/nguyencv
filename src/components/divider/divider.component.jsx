@@ -1,6 +1,7 @@
 import React from "react";
 import { DividerContainer, Button } from "./divider.styles";
 const Divider = props => (
+  <div>
   <DividerContainer>
     <div className="mask" />
     <Button />
@@ -9,6 +10,7 @@ const Divider = props => (
       <i>{props.name}</i>
     </span> */}
   </DividerContainer>
+  </div>
 );
 
 export default Divider;

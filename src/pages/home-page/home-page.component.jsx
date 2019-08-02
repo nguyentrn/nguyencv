@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Link as Scroll } from "react-scroll";
-
 import {
   FaLinkedin,
   FaFacebookF,
@@ -20,6 +19,14 @@ import {
   ViewMoreButton
 } from "./home-page.styles";
 import TypingText from "../../components/typing-text/typing-text.component";
+import { SeparatorBottom } from "../../components/separator/separator.component";
+
+import { useWindowSize } from "react-use";
+
+const Wdow = () => {
+  const { width, height } = useWindowSize();
+  return { width, height };
+};
 
 const HomePage = props => {
   return (
@@ -78,20 +85,57 @@ const HomePage = props => {
         </Scroll>
       </TypingDivider>
       <DescriptionContainer>
-        <a href="https://google.com">
-          <div>DOWNLOAD CV</div>
-          <h3>
-            <FaFileDownload />
-          </h3>
-        </a>
-        <a href="https://google.com">
-          <div>CONTACT ME</div>
-          <h3>
-            <FaRegAddressCard />
-          </h3>
-        </a>
+      
+        {Wdow().width < 1024 ? (
+          <Scroll
+            activeClass="active"
+            to="detailContainer"
+            offset={-55}
+            spy={true}
+            smooth={true}
+            duration={800}
+            containerId="containerElement"
+          >
+            <Link to="/resume">
+              <div>DOWNLOAD CV</div>
+              <h3>
+                <FaFileDownload />
+              </h3>
+            </Link>
+            <Link to="/contact">
+              <div>CONTACT ME</div>
+              <h3>
+                <FaRegAddressCard />
+              </h3>
+            </Link>
+          </Scroll>
+        ) : (
+          <Scroll
+            activeClass="active"
+            to="detailNavigate"
+            offset={-100}
+            spy={true}
+            smooth={true}
+            duration={800}
+            containerId="navigate"
+          >
+            <Link to="/resume">
+              <div>DOWNLOAD CV</div>
+              <h3>
+                <FaFileDownload />
+              </h3>
+            </Link>
+            <Link to="/contact">
+              <div>CONTACT ME</div>
+              <h3>
+                <FaRegAddressCard />
+              </h3>
+            </Link>
+          </Scroll>
+        )}
       </DescriptionContainer>
       <BackgroundContainer />
+      <SeparatorBottom />
     </HomePageContainer>
   );
 };

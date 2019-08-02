@@ -131,7 +131,6 @@ export const TypingDivider = styled(DividerContainer)`
 const sdb06 = keyframes`
   0% {
     transform:  rotateZ(-45deg) translate(-0.2rem, 0.2rem);
-
   }
   25% {    
     transform:  rotateZ(-45deg) translate(0.02rem, -0.02rem);
@@ -156,7 +155,6 @@ export const ViewMoreButton = styled.div`
     top: 0;
     left: 50%;
     top: 50%;
-
     width: 1rem;
     height: 1rem;
     margin: -0.75rem -0.5rem;
@@ -176,27 +174,41 @@ export const DescriptionContainer = styled.div`
   width: 100%;
   position: absolute;
   bottom: 1.5rem;
-  margin-top: 2rem;
+  margin: auto;
+
+
   a {
-    display: flex;
+          display: flex;
     font-size: 0.9rem;
     justify-content: center;
     font-weight: bold;
-    margin: 1rem 0.6rem;
+    width:100%;
+    margin: 0rem;
+ 
   }
-  div {
+   div {
     margin-right: 0.5rem;
   }
   h3 {
     vertical-align: bottom;
   }
 
+
   @media ${devices.mobile} {
     a {
-      margin: 1rem;
+      margin: 0.5rem;
     }
   }
+
   @media ${devices.laptop} {
     bottom: 0;
-  }
+  } 
+
+
+/* 
+  
+
+  @media ${devices.laptop} {
+    bottom: 0;
+  }  */
 `;

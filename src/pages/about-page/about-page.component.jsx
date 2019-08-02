@@ -13,62 +13,98 @@ import { FirstButton } from "../../style/insidePage";
 import * as moment from "moment";
 import { SwitchTransition, Transition } from "react-transition-group";
 
-const myBirthday = moment("01/13/1996", "MM/DD/YYYY").toObject();
-const currentTime = moment().toObject();
+const myBirthday = moment("01/13/1996", "MM/DD/YYYY");
+const currentTime = moment();
 
-const myAge = {
-  years: currentTime.years - myBirthday.years,
-  months: currentTime.months - myBirthday.months,
-  date: currentTime.date - myBirthday.date
-};
+let years = currentTime.diff(myBirthday, "year");
+myBirthday.add(years, "years");
+let months = currentTime.diff(myBirthday, "months");
+myBirthday.add(months, "months");
+let date = currentTime.diff(myBirthday, "days");
 
-const B = (props) => <span style={{fontWeight: 'bold'}}>{props.children}</span>
+const myAge = { years, months, date };
 
-
+// I have experience in frontend like website design and building and
 const contents = [
   {
-    primaryHeading: "About",
-    secondaryHeading: "Me",
+    primaryHeading1: "About",
+    secondaryHeading1: "Me",
     hello: "Hello! I am Nguyên",
-    aboutMe1:
-      `A junior ${<B>bold</B>} developer from Ho Chi Minh City. I have experience in frontend like web site design and building and customization, also I have a basic knowledge in backend (my major at university).`,
+    aboutMe1: (
+      <div>
+        A <strong>Web Developer</strong> from Ho Chi Minh City. I'm focusing on
+        expanding my solid experience in frontend and Single Page App
+        development, also I have a basic knowledge in backend which I learned
+        from university.
+      </div>
+    ),
     aboutMe2:
-      " I am eager to be challenged in order to grow and further improve my IT skills. My greatest passion in life is using my technical know-how to benefit other people and organisations. That's my motiviated to learn new stuffs day by day and become a fullstack developer one day !",
-    callInAction:
-      "I fall in love with Javascript, SPA, Node and Python. I would like to marry one (or many 😉) of them in the near future. Would you mind telling me if you see them around? Leave a message here and I will response to you soon!",
+      "My passion is applying what did I know about technology to build something useful (for me and for everyone). That motivates me to learn new stuffs day by day and to become a senior fullstack developer one day !",
+    callInAction: (
+      <h1>
+        <span>Fall in love with Javascript, ReactJS, SPA, Node*</span> and{" "}
+        <span>Python*</span>. I <span>would like to marry one</span> (
+        <span>or many</span> 😉){" "}
+        <span>
+          of them in the near future. <br />
+          Would you mind telling me if you see them around?
+        </span>
+        <span>
+          Leave a message <strong>here</strong>
+        </span>{" "}
+        and I <span>will response to you soon!</span>
+      </h1>
+    ),
     ctaComment:
-      "I can't afford to meet their conditions for now. But I would happily try for a date in case they give me a chance !",
+      "About *: I love Node and Python but can't afford to meet these girls's conditions for now. But I would pleasefully try for a date in case they give me a chance !",
 
     age: "Age :",
     exactAge: `${myAge.years} years ${myAge.months} months ${
-      myAge.date
-    } days old `,
+      myAge.date < 0 ? myAge.date + 30 : myAge.date
+    } days old`,
     phone: "Phone :",
     email: "Email :",
     address: "Address :",
     myAddress: "Binh Chanh, Ho Chi Minh City",
-    exactAddress: "14th Street, Trung Son,"
+    exactAddress: "14th Street, Trung Son,",
+    primaryHeading2: "About",
+    secondaryHeading2: "This"
   },
 
   {
-    primaryHeading: "Giới",
-    secondaryHeading: "thiệu",
+    primaryHeading1: "Mô tả",
+    secondaryHeading1: "Bản thân",
     hello: "Xin chào! Mình là Nguyên",
-    aboutMe1: "Some",
+    aboutMe1: (
+      <div>
+        Lập trình viên web. Mình có kinh nghiệm lập trình frontend như thiết kế
+        và xây dựng website. Mình cũng có kiến thức backend cơ bản tích lũy từ
+        trường đại học.
+      </div>
+    ),
     aboutMe2:
-      "Hiện tại mình đang tập trung vào phát triển kỹ năng lập trình front-end và muốn trở thành một lập trình viên full-stack trong tương lai gần.",
-    callInAction:
-      "I fall in love with Javascript, SPA, Node, Python and I would like to marry one (or many :)) of them in the near future. Would you mind noticing me if you see them around? Then leave a message here and I will response to you soon! But I will happily afford for a date! ",
+      "Đam mê việc ứng dụng công nghệ để xây dựng những thứ có giá trị thực tiễn. Đó là động lực giúp mình yêu thích và duy trì việc lập trình hằng ngày. Mong muốn trở thành một lập trình viên fullstack trong tương lai gần !",
+    callInAction: (
+      <h1>
+        Mình rất hứng thú với Javascript, SPA, Node, Python và mong muốn được
+        làm việc với một trong số những công nghệ này. Muốn nhắn nhủ gì với
+        mình? Để lại tin nhắn tại đây và mình sẽ cố gắng phản hồi thật sớm
+      </h1>
+    ),
     ctaComment:
-      " But I will happily afford for a date in case they give me a chance!",
+      "But I will pleasefully afford for a date in case they give me a chance!",
 
     age: "Tuổi :",
-    exactAge: `${myAge.years} năm ${myAge.months} tháng ${myAge.date} ngày `,
+    exactAge: `${myAge.years} năm ${myAge.months} tháng ${
+      myAge.date < 0 ? myAge.date + 30 : myAge.date
+    } ngày `,
     phone: "Điện thoại :",
     email: "Email :",
     address: "Địa chỉ :",
     myAddress: "Bình Chánh, TP. Hồ Chí Minh",
-    exactAddress: "Đường 14, KDC Trung Sơn,"
+    exactAddress: "Đường 14, KDC Trung Sơn,",
+    primaryHeading2: "Về",
+    secondaryHeading2: "Trang web này"
   }
 ];
 const stuffsUsed = {
@@ -111,12 +147,6 @@ const stuffsUsed = {
       author: "Ghost Rider",
       link: "https://codepen.io/GhostRider/pen/GHaFw"
     }
-
-    // {
-    //   name: "",
-    //   author: "",
-    //   link: ""
-    // }
   ]
 };
 
@@ -124,8 +154,8 @@ const AboutPage = props => {
   const { isVietnamese } = useContext(LanguageContext);
   const [isMouseEnter, setIsMouseEnter] = useState(false);
   const {
-    primaryHeading,
-    secondaryHeading,
+    primaryHeading1,
+    secondaryHeading1,
     hello,
     aboutMe1,
     aboutMe2,
@@ -137,12 +167,15 @@ const AboutPage = props => {
     email,
     address,
     myAddress,
-    exactAddress
+    exactAddress,
+    primaryHeading2,
+    secondaryHeading2
   } = contents[isVietnamese ? 1 : 0];
   return (
     <AboutPageContainer>
+      {console.count("counter")}
       <h3>
-        <span>{primaryHeading}</span> {secondaryHeading}
+        <span>{primaryHeading1}</span> {secondaryHeading1}
       </h3>
       <DetailMe>
         <div>
@@ -207,14 +240,15 @@ const AboutPage = props => {
           <LineContainer />
         </div>
       </DetailMe>
-
       <CallInAction>
-        <h2>{callInAction}</h2> <p>{ctaComment}</p>
+        {callInAction}
+        <h4>
+          <em>{ctaComment}</em>
+        </h4>
       </CallInAction>
       <LineContainer />
-
       <h3>
-        <span>{primaryHeading}</span> This
+        <span>{primaryHeading2}</span> {secondaryHeading2}
       </h3>
       <DetailThis>
         <p>This website is built from scratch with React and some library</p>

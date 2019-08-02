@@ -5,7 +5,7 @@ import { devices } from "./devices";
 export const InsidePage = styled.div`
   padding: 1.5rem 1.5rem 5rem;
   display: flex;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   flex-direction: column;
   min-height: 10rem;
   background-color: ${theme.light};
