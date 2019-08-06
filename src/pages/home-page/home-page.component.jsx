@@ -1,6 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Link as Scroll } from "react-scroll";
+import React, { useContext } from "react";
+import { LanguageContext } from "../../contexts/language.context";
 import {
   FaLinkedin,
   FaFacebookF,
@@ -14,21 +13,16 @@ import {
   InfoContainer,
   StyledTypist,
   DescriptionContainer,
-  AvatarContainer,
-  TypingDivider,
-  ViewMoreButton
+  AvatarContainer
 } from "./home-page.styles";
 import TypingText from "../../components/typing-text/typing-text.component";
 import { SeparatorBottom } from "../../components/separator/separator.component";
-
-import { useWindowSize } from "react-use";
-
-const Wdow = () => {
-  const { width, height } = useWindowSize();
-  return { width, height };
-};
+import LinkWithScroll from "../../components/link-with-scroll/link-with-scroll.component";
+import ScrollDown from "../../components/scroll-down/scroll-down.component";
 
 const HomePage = props => {
+  const { isVietnamese } = useContext(LanguageContext);
+
   return (
     <HomePageContainer>
       <AvatarContainer>
@@ -64,75 +58,25 @@ const HomePage = props => {
       </InfoContainer>
       <TypingText infinite="8">It will never be perfect.</TypingText>
       <TypingText delay="5000ms">Stop thinking. Just do more!</TypingText>
-      <TypingDivider>
-        <div className="mask" />
-        <Scroll
-          activeClass="active"
-          to="detailContainer"
-          offset={-50}
-          spy={true}
-          smooth={true}
-          duration={800}
-          containerId="containerElement"
-        >
-          <Link to="/about">
-            <span>
-              <ViewMoreButton>
-                <span />
-              </ViewMoreButton>
-            </span>
-          </Link>
-        </Scroll>
-      </TypingDivider>
+      <LinkWithScroll link={"about"}>
+        <ScrollDown />
+      </LinkWithScroll>
       <DescriptionContainer>
-      
-        {Wdow().width < 1024 ? (
-          <Scroll
-            activeClass="active"
-            to="detailContainer"
-            offset={-55}
-            spy={true}
-            smooth={true}
-            duration={800}
-            containerId="containerElement"
-          >
-            <Link to="/resume">
-              <div>DOWNLOAD CV</div>
-              <h3>
-                <FaFileDownload />
-              </h3>
-            </Link>
-            <Link to="/contact">
-              <div>CONTACT ME</div>
-              <h3>
-                <FaRegAddressCard />
-              </h3>
-            </Link>
-          </Scroll>
-        ) : (
-          <Scroll
-            activeClass="active"
-            to="detailNavigate"
-            offset={-100}
-            spy={true}
-            smooth={true}
-            duration={800}
-            containerId="navigate"
-          >
-            <Link to="/resume">
-              <div>DOWNLOAD CV</div>
-              <h3>
-                <FaFileDownload />
-              </h3>
-            </Link>
-            <Link to="/contact">
-              <div>CONTACT ME</div>
-              <h3>
-                <FaRegAddressCard />
-              </h3>
-            </Link>
-          </Scroll>
-        )}
+        <React.Fragment>
+          <LinkWithScroll link={"cv"} download>
+            <div>{isVietnamese ? "TẢI CV" : "DOWNLOAD CV"}</div>
+            <h3>
+              <FaFileDownload />
+            </h3>
+          </LinkWithScroll>
+
+          <LinkWithScroll link={"contact"}>
+            <div>{isVietnamese ? "LIÊN HỆ" : "CONTACT ME"}</div>
+            <h3>
+              <FaRegAddressCard />
+            </h3>
+          </LinkWithScroll>
+        </React.Fragment>
       </DescriptionContainer>
       <BackgroundContainer />
       <SeparatorBottom />

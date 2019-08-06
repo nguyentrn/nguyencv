@@ -7,7 +7,7 @@ const contents = [
   { about: "About", resume: "Resume", note: "Note", contact: "Contact" },
   {
     about: "Giới thiệu",
-    resume: "Bản tóm tắt",
+    resume: "Resume",
     note: "Ghi chú",
     contact: "Liên hệ"
   }

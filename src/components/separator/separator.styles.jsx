@@ -12,7 +12,7 @@ const separatorContainer = css`
   }
 
   path {
-    fill: ${theme.primaryColor}10;
+    fill: ${theme.neutralColor}12;
   }
 `;
 
@@ -30,6 +30,6 @@ export const SeparatorTopContainer = styled.div`
   top: 0;
 
   @media ${devices.laptop} {
-    margin-top: -3rem;
+    margin-top: -2rem;
   }
 `;

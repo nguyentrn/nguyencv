@@ -7,10 +7,6 @@ export const WelcomeContainer = styled.div`
   height: 100%;
   display: none;
 
-  @media ${devices.mobile} {
-  }
-  @media ${devices.tablet} {
-  }
   @media ${devices.laptop} {
     display: flex;
     flex-direction: column;

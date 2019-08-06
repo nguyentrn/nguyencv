@@ -14,6 +14,7 @@ const pounding = keyframes`{
 export const FooterContainer = styled.div`
   text-align: center;
   color: ${theme.light};
+  display: flex;
 
   p {
     font-size: 0.9rem;
@@ -21,6 +22,8 @@ export const FooterContainer = styled.div`
     margin-right: 0.4rem;
     letter-spacing: 0.1rem;
     display: inline-block;
+    z-index: 2;
+    /* position: absolute; */
   }
 `;
 
@@ -30,6 +33,7 @@ export const HeartIcon = styled.div`
   display: inline-block;
   overflow: hidden;
   animation: ${pounding} 0.5s linear infinite alternate;
+  line-height: 1rem;
 
   &:before,
   &:after {

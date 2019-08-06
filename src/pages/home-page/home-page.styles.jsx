@@ -1,7 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { theme } from "../../style/theme";
 import { devices } from "../../style/devices";
-import { DividerContainer } from "../../components/divider/divider.styles";
 
 const textclip = keyframes`
   to {
@@ -22,10 +21,9 @@ export const HomePageContainer = styled.div`
 
   @media ${devices.laptop} {
     border-radius: 0.3rem;
-    box-shadow: 0.1rem 0.1rem 2rem 0.5rem rgba(0, 0, 0, 0.2);
-
-    width: 33%;
-    min-width: 33%;
+    box-shadow: 0.4rem 0.4rem 1.5rem 0.5rem rgba(0, 0, 0, 0.2);
+    width: 31%;
+    min-width: 31%;
   }
   @media ${devices.widescreen} {
     width: 30%;
@@ -42,6 +40,10 @@ export const BackgroundContainer = styled.div`
   clip-path: polygon(0 0, 100% 0, 100% 31%, 50% 38%, 0 31%);
   @media ${devices.tablet} {
     clip-path: polygon(0 0, 100% 0, 100% 31%, 50% 38%, 0 31%);
+  }
+
+  @media (max-height: 450px) {
+    clip-path: polygon(0 0, 100% 0, 100% 25%, 50% 32%, 0 25%);
   }
 `;
 
@@ -62,6 +64,18 @@ export const AvatarContainer = styled.div`
   @media ${devices.laptop} {
     width: 50%;
   }
+
+  @media (orientation: landscape) and (max-width: 1023px) and (max-height: 500px) {
+    width: 20%;
+    margin-top: 6%;
+  }
+
+  @media (max-height: 340px) {
+    width: 35%;
+  }
+  @media (max-height: 200px) {
+    display: none;
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -80,12 +94,22 @@ export const InfoContainer = styled.div`
     & > svg {
       cursor: pointer;
       margin: 0 0.3rem;
-      z-index: 10;
+      z-index: 4;
     }
     margin-top: 0rem;
   }
   @media ${devices.laptop} {
     bottom: 4%;
+  }
+
+  @media (orientation: landscape) and (max-height: 450px) {
+    h3 {
+      display: none;
+    }
+  }
+
+  @media (orientation: landscape) and (max-width: 400px) {
+    bottom: 7%;
   }
 `;
 export const StyledTypist = styled.div`
@@ -117,94 +141,44 @@ export const StyledTypist = styled.div`
     font-weight: bold;
   }
 `;
-
-export const TypingDivider = styled(DividerContainer)`
-  position: relative;
-  height: 1px;
-  margin: 0;
-
-  @media ${devices.laptop} {
-    display: none;
-  }
-`;
-
-const sdb06 = keyframes`
-  0% {
-    transform:  rotateZ(-45deg) translate(-0.2rem, 0.2rem);
-  }
-  25% {    
-    transform:  rotateZ(-45deg) translate(0.02rem, -0.02rem);
-  }
-  50% {    
-    transform:  rotateZ(-45deg) translate(-0.2rem, 0.2rem);
-  }
-  75% {    
-    transform:  rotateZ(-45deg) translate(0.02rem, -0.02rem);
-  }
-  100% {
-    transform:  rotateZ(-45deg) translate(-0.2rem, 0.2rem);
-  }
-`;
-
-export const ViewMoreButton = styled.div`
-  padding-top: 4rem;
-  cursor: pointer;
-
-  & > span {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    top: 50%;
-    width: 1rem;
-    height: 1rem;
-    margin: -0.75rem -0.5rem;
-    border-left: 2px solid ${theme.primaryColor};
-    border-bottom: 2px solid ${theme.primaryColor};
-    -webkit-transform: rotateZ(-45deg);
-    transform: rotateZ(-45deg);
-    animation: ${sdb06} 1.5s ease-in infinite;
-    box-sizing: border-box;
-    border-radius: 0.1rem;
-  }
-`;
+// -webkit-tap-highlight-color: transparent;
 
 export const DescriptionContainer = styled.div`
+font-size: 0.9rem;
+font-weight: 600;
   display: flex;
-  justify-content: space-between;
   width: 100%;
+  justify-content: space-evenly;
   position: absolute;
   bottom: 1.5rem;
-  margin: auto;
-
+  -webkit-tap-highlight-color: transparent;
 
   a {
-          display: flex;
-    font-size: 0.9rem;
-    justify-content: center;
-    font-weight: bold;
-    width:100%;
-    margin: 0rem;
- 
+    display: flex;
+    margin: 0.4rem;
   }
-   div {
-    margin-right: 0.5rem;
-  }
+
   h3 {
-    vertical-align: bottom;
+    margin-left: 0.5rem
   }
-
-
-  @media ${devices.mobile} {
-    a {
-      margin: 0.5rem;
-    }
-  }
+ 
 
   @media ${devices.laptop} {
     bottom: 0;
-  } 
+    font-size: 0.8rem;
+
+  }  
+
+  @media ${devices.widescreen} {
+    font-size: 0.9rem;
+
+  }  
 
 
+  @media (orientation: landscape) and (max-height: 360px) {
+      display: none;
+    
+  }
 /* 
   
 

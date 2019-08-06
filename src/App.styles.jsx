@@ -4,8 +4,7 @@ import { theme } from "./style/theme";
 
 export const AppContainer = styled.div`
   height: 100vh;
-  background: url("https://i.pinimg.com/originals/44/6e/3b/446e3b79395a287ca32f7977dd83b290.jpg")
-    center center / cover;
+  background: ${theme.gradient};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,18 +23,24 @@ export const NavPageContainer = styled.div`
   @media only screen and ${devices.tablet} {
     margin: auto;
     width: 500px;
-    height: 90%;
+    height: 94%;
   }
   @media only screen and ${devices.laptop} {
+    margin: 0.5% auto 0;
+
     flex-direction: row;
-    width: 1020px;
-    overflow: hidden;
+    width: 990px;
+    overflow: visible;
   }
   @media only screen and ${devices.widescreen} {
     width: 1150px;
   }
   @media only screen and ${devices.superwidescreen} {
     width: 80%;
+  }
+
+  @media (orientation: landscape) and (max-width: 1023px) and (max-height: 500px) {
+    width: 90%;
   }
 `;
 
@@ -88,13 +93,17 @@ export const PageContainer = styled.div`
   }
   @media only screen and ${devices.laptop} {
     flex-direction: row;
-    width: 1020px;
-    overflow: hidden;
+    width: 990px;
+    overflow: visible;
   }
   @media only screen and ${devices.widescreen} {
     width: 1100px;
   }
-  @media only screen and ${devices.widescreen} {
+  @media only screen and ${devices.superwidescreen} {
+    width: 100%;
+  }
+
+  @media (orientation: landscape) and (max-width: 1023px) {
     width: 100%;
   }
 `;

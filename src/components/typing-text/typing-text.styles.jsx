@@ -18,7 +18,7 @@ export const TypingTextElement = styled.div`
   /* width: 1rem; */
   margin: 0 auto;
   border-right: 2px solid ${theme.light};
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -29,6 +29,10 @@ export const TypingTextElement = styled.div`
   animation-delay: ${props => props.delay || "1s"};
   @media ${devices.laptop} {
     top: 50%;
+  }
+
+  @media (max-height: 500px) {
+    display: none;
   }
 `;
 

@@ -12,6 +12,8 @@ import NextButton from "../../components/next-button/next-button.component";
 import { FirstButton } from "../../style/insidePage";
 import * as moment from "moment";
 import { SwitchTransition, Transition } from "react-transition-group";
+import { SeparatorBottom } from "../../components/separator/separator.component";
+import LinkWithScroll from "../../components/link-with-scroll/link-with-scroll.component";
 
 const myBirthday = moment("01/13/1996", "MM/DD/YYYY");
 const currentTime = moment();
@@ -30,29 +32,33 @@ const contents = [
     primaryHeading1: "About",
     secondaryHeading1: "Me",
     hello: "Hello! I am Nguyên",
-    aboutMe1: (
+    aboutMe: (
       <div>
-        A <strong>Web Developer</strong> from Ho Chi Minh City. I'm focusing on
-        expanding my solid experience in frontend and Single Page App
-        development, also I have a basic knowledge in backend which I learned
-        from university.
+        A <strong>Web Developer</strong> from Ho Chi Minh City. I'm{" "}
+        <strong>
+          focusing on expanding my solid experience in Frontend and Single Page
+          App
+        </strong>{" "}
+        development, also I have a <strong>basic knowledge in Backend</strong>{" "}
+        which I learned from university.
+        <br />
+        My passion is applying what did I know about technology to build
+        something useful (for me and for everyone). That motivates me to learn
+        new stuffs day by day and to{" "}
+        <strong>become a Senior Fullstack Developer</strong> one day !
       </div>
     ),
-    aboutMe2:
-      "My passion is applying what did I know about technology to build something useful (for me and for everyone). That motivates me to learn new stuffs day by day and to become a senior fullstack developer one day !",
     callInAction: (
       <h1>
-        <span>Fall in love with Javascript, ReactJS, SPA, Node*</span> and{" "}
-        <span>Python*</span>. I <span>would like to marry one</span> (
-        <span>or many</span> 😉){" "}
-        <span>
-          of them in the near future. <br />
-          Would you mind telling me if you see them around?
-        </span>
-        <span>
-          Leave a message <strong>here</strong>
-        </span>{" "}
-        and I <span>will response to you soon!</span>
+        Fall in love with Javascript, ReactJS, SPA, Node*, Python*{" "}
+        <span>and I</span> would like to marry one<span> (</span>or many 😉) of
+        them in the near future. <br />
+        Would you mind telling me if you see them around? Leave a message{" "}
+        <LinkWithScroll link={"contact"}>
+          <strong>here</strong>
+        </LinkWithScroll>
+        <span> and I </span>
+        will response to you soon! <br /> Thank for visiting !
       </h1>
     ),
     ctaComment:
@@ -75,24 +81,40 @@ const contents = [
     primaryHeading1: "Mô tả",
     secondaryHeading1: "Bản thân",
     hello: "Xin chào! Mình là Nguyên",
-    aboutMe1: (
+    aboutMe: (
       <div>
-        Lập trình viên web. Mình có kinh nghiệm lập trình frontend như thiết kế
-        và xây dựng website. Mình cũng có kiến thức backend cơ bản tích lũy từ
+        <strong>Lập trình viên Web</strong> đến từ TP Hồ Chí Minh. Hiện tại mình{" "}
+        <strong>
+          đang tập trung phát triển kỹ năng Frontend và Single Page App
+        </strong>
+        . Mình cũng có <strong>kiến thức Backend cơ bản</strong> tích lũy từ
         trường đại học.
+        <br />
+        Đam mê việc ứng dụng công nghệ để xây dựng những ứng dụng có giá trị
+        thực tiễn. Đó là động lực giúp mình yêu thích và duy trì việc lập trình
+        hằng ngày.{" "}
+        <strong>Mong muốn trở thành một lập trình viên Fullstack</strong> trong
+        tương lai gần !
       </div>
     ),
-    aboutMe2:
-      "Đam mê việc ứng dụng công nghệ để xây dựng những thứ có giá trị thực tiễn. Đó là động lực giúp mình yêu thích và duy trì việc lập trình hằng ngày. Mong muốn trở thành một lập trình viên fullstack trong tương lai gần !",
     callInAction: (
       <h1>
-        Mình rất hứng thú với Javascript, SPA, Node, Python và mong muốn được
-        làm việc với một trong số những công nghệ này. Muốn nhắn nhủ gì với
-        mình? Để lại tin nhắn tại đây và mình sẽ cố gắng phản hồi thật sớm
+        <span>Mình</span> rất thích Javascript, SPA, Node*, Python*
+        <span> và </span>mong muốn tham gia các dự án của công nghệ này{" "}
+        <span>
+          {" "}
+          trong tương lai. <br />
+          Bạn có thể
+        </span>{" "}
+        liên hệ với mình{" "}
+        <LinkWithScroll link={"contact"}>
+          <strong>tại đây.</strong>
+        </LinkWithScroll>{" "}
+        <br /> Rất cảm ơn bạn đã ghé thăm !
       </h1>
     ),
     ctaComment:
-      "But I will pleasefully afford for a date in case they give me a chance!",
+      "Về *: Mình rất thích Node và Python nhưng chỉ có kiến thức sơ khai. Sẽ nghiên cứu kỹ hơn nếu có nhu cầu công việc.",
 
     age: "Tuổi :",
     exactAge: `${myAge.years} năm ${myAge.months} tháng ${
@@ -143,9 +165,19 @@ const stuffsUsed = {
       link: "https://codepen.io/lzl124631x/pen/pbGppZ"
     },
     {
-      name: "CSS Scroll Bars ",
+      name: "CSS Scroll Bars",
       author: "Ghost Rider",
       link: "https://codepen.io/GhostRider/pen/GHaFw"
+    },
+    {
+      name: "Pure Css Animated Background",
+      author: "Mohammad Abdul Mohaiman",
+      link: "https://codepen.io/mohaiman/pen/MQqMyo"
+    },
+    {
+      name: "Gradient color by HSL",
+      author: "wakamsha",
+      link: "https://codepen.io/wakamsha/pen/GpxJmg"
     }
   ]
 };
@@ -157,8 +189,7 @@ const AboutPage = props => {
     primaryHeading1,
     secondaryHeading1,
     hello,
-    aboutMe1,
-    aboutMe2,
+    aboutMe,
     callInAction,
     ctaComment,
     age,
@@ -180,7 +211,7 @@ const AboutPage = props => {
       <DetailMe>
         <div>
           <h4>{hello}</h4>
-          <div>{aboutMe1}</div> <div>{aboutMe2}</div>
+          <div>{aboutMe}</div>
         </div>
         <div
           onMouseEnter={() => setIsMouseEnter(!isMouseEnter)}
@@ -278,6 +309,9 @@ const AboutPage = props => {
       <FirstButton>
         <NextButton name={"Resume"} />
       </FirstButton>
+      <div style={{ marginLeft: "-1.5rem" }}>
+        <SeparatorBottom style={{ display: "-1.5rem" }} />
+      </div>
     </AboutPageContainer>
   );
 };

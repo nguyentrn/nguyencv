@@ -7,6 +7,7 @@ export const DetailContainer = styled(Element)`
   width: 100%;
   display: inline-block;
   position: relative;
+  box-shadow: 1rem 1rem 1.5rem 0.5rem rgba(0, 0, 0, 0.2);
   @media ${devices.laptop} {
     min-height: 90%;
     overflow-y: scroll;
@@ -26,7 +27,7 @@ export const DetailContainer = styled(Element)`
     &::-webkit-scrollbar {
       border-radius: 10px;
       height: 80%;
-      width: 0.4rem;
+      width: 0.2rem;
       background-color: rgba(255, 255, 255, 0);
     }
 

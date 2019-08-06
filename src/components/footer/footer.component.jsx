@@ -3,8 +3,9 @@ import { FooterContainer, HeartIcon } from "./footer.styles.jsx";
 
 const Footer = () => (
   <FooterContainer>
-    <p>Made by Nguyên with </p>
-    <HeartIcon />
+    <p>
+      Made by Nguyên with <HeartIcon />
+    </p>
   </FooterContainer>
 );
 

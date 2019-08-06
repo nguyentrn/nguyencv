@@ -35,11 +35,12 @@ export const DetailMe = styled.div`
     flex-direction: row;
     align-items: center;
     & > div {
-      width: 55%;
+      width: 60%;
       margin: 1rem 0.4rem;
+      z-index: 4;
 
       &:last-child {
-        width: 45%;
+        width: 40%;
       }
     }
   }
@@ -63,12 +64,14 @@ export const CallInAction = styled.div`
 
   /* Blockquote header */
   h1 {
-    font-family: "Roboto Mono", monospace;
+    font-family: "Dancing Script", cursive;
+    /* font-style: italic; */
+
+    letter-spacing: 0.05rem;
     position: relative; /* for pseudos */
-    color: ${theme.neutralColor};
-    font-size: 0.8rem;
-    font-weight: normal;
-    line-height: 1;
+    color: ${theme.primaryColor};
+    font-size: 1.3rem;
+    font-weight: 500;
     margin: 0;
     border: 2px solid ${theme.light};
     border: solid 2px;
@@ -76,7 +79,7 @@ export const CallInAction = styled.div`
     padding: 25px;
 
     span {
-      color: ${theme.primaryColor};
+      color: ${theme.neutralColor}aa;
     }
   }
 
@@ -84,7 +87,7 @@ export const CallInAction = styled.div`
   h1:after {
     content: "";
     position: absolute;
-    border: 2px solid ${theme.neutralColor};
+    border: 2px solid ${theme.primaryColor};
     border-radius: 0 50px 0 0;
     width: 60px;
     height: 60px;
@@ -105,13 +108,6 @@ export const CallInAction = styled.div`
     z-index: 2;
   }
 
-  @media all and (min-width: 600px) {
-    h1 {
-      font-size: 1rem;
-      line-height: 1.2;
-    }
-  }
-
   h4 {
     color: ${theme.dark};
     font-weight: 400;
@@ -126,13 +122,18 @@ export const CallInAction = styled.div`
   }
 
   @media ${devices.laptop} {
+    h1 {
+      margin: 0 3rem;
+    }
+
     h4 {
       position: relative;
-
       margin: 0;
       padding-top: 15px;
       z-index: 1;
-      margin-left: 10rem;
+      margin-left: 13rem;
+      margin-right: 3rem;
+
       padding-left: 12px;
     }
   }
