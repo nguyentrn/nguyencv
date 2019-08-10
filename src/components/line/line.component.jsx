@@ -1,12 +1,10 @@
 import React from "react";
-import { Line } from "./line.styles";
+import { LineContainer, LineCore } from "./line.styles";
 
-const LineContainer = () => (
-  <div
-    style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-  >
-    <Line />
-  </div>
+const Line = () => (
+  <LineContainer>
+    <LineCore />
+  </LineContainer>
 );
 
-export default LineContainer;
+export default Line;

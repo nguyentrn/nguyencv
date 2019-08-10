@@ -2,6 +2,6 @@ import styled from "styled-components";
 // import { devices } from "../../style/devices";
 import { InsidePage } from "../../style/insidePage";
 
-export const BlogPageContainer = styled(InsidePage)`
+export const NotePageContainer = styled(InsidePage)`
   position: relative;
 `;

@@ -3,10 +3,22 @@ import { devices } from "../../style/devices";
 
 // const displayButton = () => (window.scrollY ? "flex" : "none");
 
+export const RoundedButtonContainer = styled.span`
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  & > p {
+    font-size: 0.6rem;
+    margin-right: 0.3rem;
+  }
+`;
+
 export const StyledRoundedButton = styled.label`
-  /* position: absolute;
-  top: 0;
-  right: 0; */
   background: #fff;
   border-radius: 999px;
 

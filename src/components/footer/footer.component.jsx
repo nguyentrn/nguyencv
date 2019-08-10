@@ -1,12 +1,22 @@
 import React from "react";
-import { FooterContainer, HeartIcon } from "./footer.styles.jsx";
+import {
+  FooterDesktopContainer,
+  FooterMobileContainer,
+  HeartIcon
+} from "./footer.styles.jsx";
 
-const Footer = () => (
-  <FooterContainer>
+export const FooterDesktop = () => (
+  <FooterDesktopContainer>
     <p>
       Made by Nguyên with <HeartIcon />
     </p>
-  </FooterContainer>
+  </FooterDesktopContainer>
 );
 
-export default Footer;
+export const FooterMobile = () => (
+  <FooterMobileContainer>
+    <p>
+      Made by Nguyên with <HeartIcon />
+    </p>
+  </FooterMobileContainer>
+);

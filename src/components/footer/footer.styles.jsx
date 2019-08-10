@@ -1,5 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import { theme } from "../../style/theme";
+import { devices } from "../../style/devices";
 
 const pounding = keyframes`{
 
@@ -11,10 +12,12 @@ const pounding = keyframes`{
     transform: scale(1);
   }}`;
 
-export const FooterContainer = styled.div`
+const FooterContainer = css`
   text-align: center;
   color: ${theme.light};
   display: flex;
+  height: 3rem;
+  align-items: center;
 
   p {
     font-size: 0.9rem;
@@ -23,11 +26,28 @@ export const FooterContainer = styled.div`
     letter-spacing: 0.1rem;
     display: inline-block;
     z-index: 2;
-    /* position: absolute; */
   }
 `;
 
-export const HeartIcon = styled.div`
+export const FooterDesktopContainer = styled.div`
+  /* @media ${devices.mobile} {
+    display: none;
+  } */
+
+  display: none;
+  @media ${devices.laptop} {
+    ${FooterContainer}
+  }
+`;
+export const FooterMobileContainer = styled.div`
+  ${FooterContainer}
+  justify-content:center;
+  @media ${devices.laptop} {
+    display: none;
+  }
+`;
+
+export const HeartIcon = styled.span`
   width: 1rem;
   height: 0.9rem;
   display: inline-block;

@@ -5,14 +5,14 @@ import { useWindowSize } from "react-use";
 import { LinkWithScrollContainer } from "./link-with-scroll.styles";
 
 const Wdow = () => {
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
 
-  return { width, height };
+  return width;
 };
 
 const LinkWithScroll = ({ link, ...props }) => (
   <LinkWithScrollContainer>
-    {Wdow().width < 1024 ? (
+    {Wdow() < 1024 ? (
       <LinkScroll
         to="detailContainer"
         offset={-55}

@@ -1,16 +1,11 @@
 import React from "react";
-import { NextButtonContainer } from "./next-button.styles";
-import LinkWithScroll from "../link-with-scroll/link-with-scroll.component";
+import {
+  NextButtonContainer,
+  StyledLinkWithScroll
+} from "./next-button.styles";
 
 const NextButton = ({ name, ...props }) => (
-  <LinkWithScroll
-    link={name}
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center"
-    }}
-  >
+  <StyledLinkWithScroll link={name}>
     <NextButtonContainer>
       <span>{name ? name.toUpperCase() : "NEXT"}</span>
       <span>
@@ -48,7 +43,7 @@ const NextButton = ({ name, ...props }) => (
         </svg>
       </span>
     </NextButtonContainer>
-  </LinkWithScroll>
+  </StyledLinkWithScroll>
 );
 
 export default NextButton;

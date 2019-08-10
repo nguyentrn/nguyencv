@@ -27,7 +27,7 @@ export const NavPageContainer = styled.div`
   }
   @media only screen and ${devices.laptop} {
     margin: 0.5% auto 0;
-
+    height: 90%;
     flex-direction: row;
     width: 990px;
     overflow: visible;
@@ -52,13 +52,14 @@ export const PageContainer = styled.div`
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 
   & > div {
     height: 50%;
   }
 
   &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
     background-color: ${theme.light};
     border-radius: 10px;
   }
@@ -83,18 +84,17 @@ export const PageContainer = styled.div`
   @media only screen and ${devices.mobile} {
     margin: auto;
     width: 400px;
-
-    height: 95%;
+    height: 100%;
   }
   @media only screen and ${devices.tablet} {
-    margin: auto;
     width: 500px;
-    height: 90%;
   }
   @media only screen and ${devices.laptop} {
     flex-direction: row;
     width: 990px;
     overflow: visible;
+    margin-left: 1rem;
+    height: 90%;
   }
   @media only screen and ${devices.widescreen} {
     width: 1100px;

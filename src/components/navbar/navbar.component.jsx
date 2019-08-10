@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+
 import { LanguageContext } from "../../contexts/language.context";
 import { NavbarContainer, StyledNavLink } from "./navbar.styles";
 import { FaUser, FaFileAlt, FaCode, FaRocketchat } from "react-icons/fa";
@@ -16,31 +17,32 @@ const contents = [
 const Navbar = () => {
   const { isVietnamese } = useContext(LanguageContext);
   const { about, resume, note, contact } = contents[isVietnamese ? 1 : 0];
+
   return (
     <div>
       <NavbarContainer>
-        <StyledNavLink activeClassName="active" exact to="/about">
-          <h1>
-            <FaUser />
-          </h1>
+        <StyledNavLink exact to="/about">
+          <div>
+            <FaUser size={25} />
+          </div>
           <p>{about}</p>
         </StyledNavLink>
-        <StyledNavLink activeClassName="active" exact to="/resume">
-          <h1>
-            <FaFileAlt />
-          </h1>
+        <StyledNavLink exact to="/resume">
+          <div>
+            <FaFileAlt size={25} />
+          </div>
           <p>{resume}</p>
         </StyledNavLink>
-        <StyledNavLink activeClassName="active" exact to="/note">
-          <h1>
-            <FaCode />
-          </h1>
+        <StyledNavLink exact to="/note">
+          <div>
+            <FaCode size={25} />
+          </div>
           <p>{note}</p>
         </StyledNavLink>
-        <StyledNavLink activeClassName="active" exact to="/contact">
-          <h1>
-            <FaRocketchat />
-          </h1>
+        <StyledNavLink exact to="/contact">
+          <div>
+            <FaRocketchat size={25} />
+          </div>
           <p>{contact}</p>
         </StyledNavLink>
       </NavbarContainer>

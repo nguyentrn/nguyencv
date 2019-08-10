@@ -1,12 +1,6 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../../contexts/language.context";
-import {
-  FaLinkedin,
-  FaFacebookF,
-  FaFileDownload,
-  FaRegAddressCard,
-  FaGithub
-} from "react-icons/fa";
+import { FaFileDownload, FaRegAddressCard } from "react-icons/fa";
 import {
   HomePageContainer,
   BackgroundContainer,
@@ -18,7 +12,7 @@ import {
 import TypingText from "../../components/typing-text/typing-text.component";
 import { SeparatorBottom } from "../../components/separator/separator.component";
 import LinkWithScroll from "../../components/link-with-scroll/link-with-scroll.component";
-import ScrollDown from "../../components/scroll-down/scroll-down.component";
+import SocialButtons from "../../components/social-button/social-button.component";
 
 const HomePage = props => {
   const { isVietnamese } = useContext(LanguageContext);
@@ -30,37 +24,14 @@ const HomePage = props => {
       </AvatarContainer>
       <InfoContainer>
         <StyledTypist>
-          <h1>TRẦN NGUYÊN</h1> <p>Front-end Developer</p>
+          <h1>TRẦN NGUYÊN</h1> <h1>Front-end Developer</h1>
         </StyledTypist>
-        <h3>
-          <FaGithub
-            onClick={() =>
-              window.open("https://github.com/nguyentrn/", "_blank")
-            }
-          />
-          <FaFacebookF
-            onClick={() =>
-              window.open(
-                "https://www.facebook.com/nguyen.tran.0113/",
-                "_blank"
-              )
-            }
-          />
-          <FaLinkedin
-            onClick={() =>
-              window.open(
-                "https://www.linkedin.com/in/nguyen-tran-1231b0180/",
-                "_blank"
-              )
-            }
-          />
-        </h3>
+        <SocialButtons />
+        <div>
+          <TypingText infinite="8">It will never be perfect.</TypingText>
+          <TypingText delay="5000ms">Stop thinking. Just do more!</TypingText>
+        </div>
       </InfoContainer>
-      <TypingText infinite="8">It will never be perfect.</TypingText>
-      <TypingText delay="5000ms">Stop thinking. Just do more!</TypingText>
-      <LinkWithScroll link={"about"}>
-        <ScrollDown />
-      </LinkWithScroll>
       <DescriptionContainer>
         <React.Fragment>
           <LinkWithScroll link={"cv"} download>

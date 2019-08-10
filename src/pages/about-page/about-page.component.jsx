@@ -7,7 +7,7 @@ import {
   DetailThis,
   Fade
 } from "./about-page.styles";
-import LineContainer from "../../components/line/line.component";
+import Line from "../../components/line/line.component";
 import NextButton from "../../components/next-button/next-button.component";
 import { FirstButton } from "../../style/insidePage";
 import * as moment from "moment";
@@ -202,9 +202,9 @@ const AboutPage = props => {
     primaryHeading2,
     secondaryHeading2
   } = contents[isVietnamese ? 1 : 0];
+
   return (
     <AboutPageContainer>
-      {console.count("counter")}
       <h3>
         <span>{primaryHeading1}</span> {secondaryHeading1}
       </h3>
@@ -235,15 +235,15 @@ const AboutPage = props => {
               </Transition>
             </SwitchTransition>
           </h5>
-          <LineContainer />
+          <Line />
           <h5>
             <span>{phone} </span> <span>(+84) 869 222 048</span>
           </h5>
-          <LineContainer />
+          <Line />
           <h5>
             <span>{email} </span> <span>nguyentran0113@gmail.com</span>
           </h5>
-          <LineContainer />
+          <Line />
           <h5>
             <span>{address} </span>
             <SwitchTransition>
@@ -268,7 +268,7 @@ const AboutPage = props => {
               </Transition>
             </SwitchTransition>
           </h5>
-          <LineContainer />
+          <Line />
         </div>
       </DetailMe>
       <CallInAction>
@@ -277,29 +277,21 @@ const AboutPage = props => {
           <em>{ctaComment}</em>
         </h4>
       </CallInAction>
-      <LineContainer />
+      <Line />
       <h3>
         <span>{primaryHeading2}</span> {secondaryHeading2}
       </h3>
       <DetailThis>
         <p>This website is built from scratch with React and some library</p>
         <ul>
-          {stuffsUsed.libraries.map(library => (
-            <li>{library}</li>
+          {stuffsUsed.libraries.map((library, id) => (
+            <li key={id}>{library}</li>
           ))}
-          {stuffsUsed.credits.map(credit => (
-            <li>
+          {stuffsUsed.credits.map((credit, id) => (
+            <li key={id}>
               <a href={credit.link}>
                 <strong>{credit.name}</strong>
-                <i
-                  style={{
-                    fontSize: "0.8rem",
-                    marginLeft: "0.2rem",
-                    marginRight: "0.4rem"
-                  }}
-                >
-                  {isVietnamese ? "của" : "by"}
-                </i>
+                <i>{isVietnamese ? "của" : "by"}</i>
                 <strong>{credit.author}</strong>
               </a>
             </li>
@@ -309,8 +301,8 @@ const AboutPage = props => {
       <FirstButton>
         <NextButton name={"Resume"} />
       </FirstButton>
-      <div style={{ marginLeft: "-1.5rem" }}>
-        <SeparatorBottom style={{ display: "-1.5rem" }} />
+      <div>
+        <SeparatorBottom />
       </div>
     </AboutPageContainer>
   );

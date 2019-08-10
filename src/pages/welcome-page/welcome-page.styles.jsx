@@ -1,25 +1,32 @@
 import styled from "styled-components";
 import { devices } from "../../style/devices";
-import { theme } from "../../style/theme";
+// import { theme } from "../../style/theme";
+import { InsidePage } from "../../style/insidePage";
 
-export const WelcomeContainer = styled.div`
+export const WelcomeContainer = styled(InsidePage)`
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 11rem;
+  @media ${devices.mobile} {
+    padding-bottom: 11rem;
+  }
+  @media ${devices.mobile} {
+    padding-bottom: 11rem;
+  }
+  @media ${devices.laptop} {
+    min-height: 100%;
+    padding-bottom: 20rem;
+  }
+`;
+
+export const BackgroundContainer = styled.div`
   width: 100%;
-  height: 100%;
-  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
 
   @media ${devices.laptop} {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    height: 90%;
-    width: 100%;
-    margin: auto;
-    /* border-radius: 0 0.1rem 0.1rem 0;
-    box-shadow: 0.2rem 0.2rem 1rem 1rem rgba(0, 0, 0, 0.5); */
-    background-color: ${theme.light};
-  }
-  @media ${devices.widescreen} {
+    margin-left: 1rem;
   }
 `;

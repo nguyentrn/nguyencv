@@ -2,15 +2,15 @@ import React from "react";
 import BackButton from "../../components/back-button/back-button.component";
 
 import NextButton from "../../components/next-button/next-button.component";
-import { BlogPageContainer } from "./blog-page.styles";
+import { NotePageContainer } from "./note-page.styles";
 import { FirstButton, SecondButton } from "../../style/insidePage";
 
-const BlogPage = () => (
-  <BlogPageContainer>
+const NotePage = () => (
+  <NotePageContainer>
     <h3>
-      <span>My</span> Blog
+      <span>My</span> Note
     </h3>
-    <div>BlogPasssssge</div> is an animation framework for React. It has basic
+    <div>NotePasssssge</div> is an animation framework for React. It has basic
     animations such as fade, flip, zoom, rotate and a lot of more advanced
     animations. It allows you to control all animations with props, for example:
     the position, delay, distance, cascade and many others. You can see them
@@ -52,7 +52,7 @@ const BlogPage = () => (
     <SecondButton>
       <BackButton name={"resume"} />
     </SecondButton>
-  </BlogPageContainer>
+  </NotePageContainer>
 );
 
-export default BlogPage;
+export default NotePage;

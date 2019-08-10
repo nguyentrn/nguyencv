@@ -11,7 +11,7 @@ export const NavbarContainer = styled.div`
   bottom: 0;
 
   @media ${devices.laptop} {
-    margin: 4rem 1rem 0 0;
+    margin: 4rem 0rem 0 0;
     flex-direction: column;
     position: relative;
     z-index: 0;
@@ -21,7 +21,7 @@ export const NavbarContainer = styled.div`
 export const StyledNavLink = styled(NavLink)`
   width: 25%;
   text-align: center;
-  padding: 0.5rem 0 0.2rem;
+  padding: 0.5rem 0.3rem 0.2rem;
   color: ${theme.dark};
   transition: 0.3s ease;
   background: ${theme.light};
@@ -29,8 +29,11 @@ export const StyledNavLink = styled(NavLink)`
   z-index: 1;
   box-shadow: 0.1rem 0.1rem 1rem 0.1rem rgba(0, 0, 0, 0.04);
 
-  /* top: 0;
-  z-index: 1; */
+  &.active {
+    background: ${theme.primaryColor}aa;
+    color: ${theme.lighterColor};
+    border-bottom: 1px solid ${theme.neutralColor};
+  }
 
   h1 {
     font-size: 1rem;
@@ -38,13 +41,12 @@ export const StyledNavLink = styled(NavLink)`
   }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.5);
-    color: ${theme.neutralColor};
+    background: ${theme.primaryColor}77;
+    color: ${theme.lighterColor};
   }
 
   @media only screen and ${devices.laptop} {
     box-shadow: 0.5rem 0.5rem 1rem 0.1rem rgba(0, 0, 0, 0.15);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,6 +54,10 @@ export const StyledNavLink = styled(NavLink)`
     width: 4.5rem;
     height: 4.5rem;
     font-size: 0.8rem;
+
+    &.active {
+      border-bottom: none;
+    }
 
     &:after {
       content: "";

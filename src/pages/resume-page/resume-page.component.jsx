@@ -11,7 +11,14 @@ const ResumePage = props => (
       <span>Re</span>sume
     </h3>
     <Education>
-      <h1>{"Education & Experience".toUpperCase()}</h1>
+      <h1>{"WORK EXPERIENCE".toUpperCase()}</h1>
+      <li>University of Science</li> <li />
+      <li />
+      <li />
+      <li />
+    </Education>
+    <Education>
+      <h1>{"Education ".toUpperCase()}</h1>
       <li>University of Science</li> <li />
       <li />
       <li />
@@ -26,9 +33,9 @@ const ResumePage = props => (
         <li>Javascript</li>
         <li>ReactJS</li>
         <li>Oracle/MSSQL/MySQL/PosgreSQL</li>
-        <li>C++</li>
+        <li>C/C++</li>
         <li>PHP</li>
-        <li>Something I meet up in project at school</li>
+        {/* <li>Something I meet up in project at school</li> */}
         <ul>
           <li>C#/ASP.NET</li>
           <li>Java/Spring MVC</li>

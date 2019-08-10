@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import "../../animate.css";
 import {
   IoIosCall,
   IoIosMail,
@@ -152,6 +153,20 @@ const CV = ({ history }) => {
               <span />
               {experience}
             </h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec
+              suscipit dolor, in auctor neque. Nulla malesuada blandit tellus,
+              sed feugiat quam. Curabitur vel est in eros pretium sollicitudin
+              quis nec diam. Aenean fringilla ipsum vitae congue condimentum.
+              Etiam venenatis, dolor ut porttitor tristique, leo leo pharetra
+              metus, ac volutpat tortor lectus quis mauris. Vivamus faucibus sem
+              vel ex scelerisque, quis venenatis libero tristique. Integer et
+              ultrices tellus. In maximus lorem elit, sed aliquet neque
+              elementum et. Sed urna justo, sodales vitae rutrum eu, fermentum
+              congue lectus. Ut eget lectus mollis, condimentum tortor sed,
+              rutrum lorem. Ut efficitur nisl vitae libero consequat ultrices.
+              Vivamus a auctor lacus. In dolor
+            </p>
           </Experience>
           <Educations>
             <h1>
@@ -191,6 +206,13 @@ const CV = ({ history }) => {
               {interests}
             </h1>
             <p>{(age, phone, email, myAddress, experience, exactAddress)}</p>
+            <p>Vivamus faucibus sem
+              vel ex scelerisque, quis venenatis libero tristique. Integer et
+              ultrices tellus. In maximus lorem elit, sed aliquet neque
+              elementum et. Sed urna justo, sodales vitae rutrum eu, fermentum
+              congue lectus. Ut eget lectus mollis, condimentum tortor sed,
+              rutrum lorem. Ut efficitur nisl vitae libero consequat ultrices.
+              Vivamus a auctor lacus. In dolor</p>
           </Interests>
         </Main>
         <Sidebar>
@@ -246,7 +268,7 @@ const CV = ({ history }) => {
       </CVContainer>
       <CVNavigate>
         <div onClick={() => history.goBack()}>
-          <p> {isVietnamese ? "Trở về" : "Go back"}</p>
+          <p className=""> {isVietnamese ? "Trở về" : "Go back"}</p>
           <button>
             <IoIosArrowRoundBack
               size={36}

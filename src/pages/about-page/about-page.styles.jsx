@@ -5,6 +5,14 @@ import { InsidePage } from "../../style/insidePage";
 
 export const AboutPageContainer = styled(InsidePage)`
   position: relative;
+
+  & > div:last-child {
+    margin-left: -1.5rem;
+
+    div {
+      display: -1.5rem;
+    }
+  }
 `;
 
 export const DetailMe = styled.div`
@@ -155,5 +163,11 @@ export const Fade = styled.div`
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+  }
+
+  i {
+    font-size: "0.8rem";
+    margin-left: "0.2rem";
+    margin-right: "0.4rem";
   }
 `;

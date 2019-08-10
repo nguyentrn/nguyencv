@@ -51,7 +51,6 @@ export const AvatarContainer = styled.div`
   width: 50%;
   z-index: 1;
   position: relative;
-  bottom: 2%;
 
   img {
     border-radius: 50%;
@@ -69,6 +68,9 @@ export const AvatarContainer = styled.div`
     width: 20%;
     margin-top: 6%;
   }
+  @media (max-height: 500px) {
+    width: 20%;
+  }
 
   @media (max-height: 340px) {
     width: 35%;
@@ -82,46 +84,53 @@ export const InfoContainer = styled.div`
   text-align: center;
   z-index: 1;
   position: relative;
-  bottom: 3%;
-
+  /* top:1%; */
+  display: flex;
+  flex-direction:column;
+  justify-content:space-around;
+height:40%;
   h1 {
     line-height: 2.2rem;
     letter-spacing: 0.2rem;
     font-weight: 300;
-  }
-
-  h3 {
-    & > svg {
-      cursor: pointer;
-      margin: 0 0.3rem;
-      z-index: 4;
+    span {
+    display:block;
     }
-    margin-top: 0rem;
   }
+/*   
+  &>span {      
+    margin-bottom: 0.75rem;
+  } */
   @media ${devices.laptop} {
-    bottom: 4%;
-  }
+    /* bottom: 4%; */
+    /* &>span {
+    margin-top: 0.5rem;
+    margin-bottom: 1.75rem;
+  } */
 
   @media (orientation: landscape) and (max-height: 450px) {
-    h3 {
+    &>span {
       display: none;
     }
   }
-
+/* 
   @media (orientation: landscape) and (max-width: 400px) {
     bottom: 7%;
-  }
+  } */
 `;
+
 export const StyledTypist = styled.div`
-  margin: 1rem;
+  /* margin: 1rem; */
   color: ${theme.light};
   font-weight: 300;
   background: linear-gradient(
     to right,
     ${theme.primaryColor} 0%,
-    ${theme.secondaryColor} 25%,
-    ${theme.dark} 50%,
-    ${theme.neutralColor} 75%,
+    ${theme.secondaryColor} 20%,
+    ${theme.primaryColor} 40%,
+    ${theme.darkerColor} 50%,
+    ${theme.primaryColor} 60%,
+    ${theme.neutralColor} 80%,
     ${theme.primaryColor} 100%
   );
   background-size: auto auto;
@@ -129,26 +138,30 @@ export const StyledTypist = styled.div`
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: ${textclip} 13s linear infinite;
+  animation: ${textclip} 10s linear infinite;
   display: inline-block;
   h1 {
     margin-top: 0.8rem;
     font-size: 1.8rem;
-  }
-  p {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    font-weight: bold;
+    &:last-child {
+      margin-top: 0;
+      font-size: 1rem;
+      letter-spacing: 0.001rem;
+      font-weight: bold;
+      &::first-letter {
+        display: none;
+      }
+    }
   }
 `;
-// -webkit-tap-highlight-color: transparent;
 
 export const DescriptionContainer = styled.div`
+z-index:5;
 font-size: 0.9rem;
 font-weight: 600;
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-around;
   position: absolute;
   bottom: 1.5rem;
   -webkit-tap-highlight-color: transparent;
@@ -173,8 +186,10 @@ font-weight: 600;
     font-size: 0.9rem;
 
   }  
+  @media  (max-height: 600px) {
 
-
+  justify-content: space-between;
+  }
   @media (orientation: landscape) and (max-height: 360px) {
       display: none;
     

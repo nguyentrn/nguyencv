@@ -9,8 +9,10 @@ export const InsidePage = styled.div`
   flex-direction: column;
   min-height: 10rem;
   background-color: ${theme.light};
+  line-height: 1.6rem;
+
   & > div {
-    width: 98%;
+    width: 100%;
     margin: 0.5rem 0;
   }
 
@@ -24,7 +26,7 @@ export const InsidePage = styled.div`
 
 export const FirstButton = styled.span`
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 3.5rem;
   right: 1rem;
 
   @media ${devices.laptop} {
@@ -35,7 +37,7 @@ export const FirstButton = styled.span`
 export const SecondButton = styled.span`
   position: absolute;
   right: 8rem;
-  bottom: 2.5rem;
+  bottom: 3.5rem;
 
   @media ${devices.laptop} {
     bottom: 1rem;

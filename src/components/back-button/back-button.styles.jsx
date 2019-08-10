@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import { theme } from "../../style/theme";
 import { Link } from "react-scroll";
+import LinkWithScroll from "../link-with-scroll/link-with-scroll.component";
 
 const color_anim = keyframes`
     0% {
@@ -12,6 +13,12 @@ const color_anim = keyframes`
     100% {
         fill: white;
     }
+`;
+export const StyledLinkWithScroll = styled(LinkWithScroll)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
 `;
 
 export const BackButtonContainer = styled.div`

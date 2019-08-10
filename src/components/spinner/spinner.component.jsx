@@ -7,11 +7,11 @@ const Spinner = () => {
   return (
     <BodyContainer>
       <SpinnerBox>
-        <div class="configure-border-1">
-          <div class="configure-core" />
+        <div className="configure-border-1">
+          <div className="configure-core" />
         </div>
-        <div class="configure-border-2">
-          <div class="configure-core" />
+        <div className="configure-border-2">
+          <div className="configure-core" />
         </div>
         <h1>TN</h1>
         <p>{isVietnamese ? "Đang tải . . ." : "Loading . . ."}</p>

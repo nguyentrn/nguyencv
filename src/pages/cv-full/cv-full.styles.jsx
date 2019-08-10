@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { theme } from "../../style/theme";
 const a4Ratio = 842 / 595;
 // export const size = "100";
@@ -110,10 +110,25 @@ export const CVPage = styled.div`
   }
 `;
 
+const slideInUp = keyframes`
+   from {
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: translate3d(50%, 0, 0);
+    visibility: visible;
+    opacity:0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity:1;
+
+  }
+`;
+
 export const CVNavigate = styled.div`
   display: flex;
   width: 100%;
-  margin-top: 2rem;
   align-items: flex-end;
 
   div {
@@ -127,6 +142,8 @@ export const CVNavigate = styled.div`
     }
 
     button {
+      z-index: 10;
+
       cursor: pointer;
       background: ${theme.light};
       border: none;
@@ -146,11 +163,13 @@ export const CVNavigate = styled.div`
   }
 
   @media (min-width: 210mm) {
-    position: absolute;
+    position: fixed;
     flex-direction: column;
     top: 0;
     right: 0.25rem;
     width: auto;
+    z-index: 4;
+
     div {
       display: flex;
       align-items: center;
@@ -165,7 +184,6 @@ export const CVNavigate = styled.div`
         background: ${theme.primaryColor}99;
         display: block;
         opacity: 0;
-        transition: 0.25s ease-in-out;
       }
 
       button {
@@ -179,6 +197,7 @@ export const CVNavigate = styled.div`
       &:hover {
         p {
           opacity: 1;
+          animation: ${slideInUp} 0.35s ease-out;
         }
       }
     }
