@@ -291,7 +291,7 @@ const AboutPage = props => {
             <li key={id}>
               <a href={credit.link}>
                 <strong>{credit.name}</strong>
-                <i>{isVietnamese ? "của" : "by"}</i>
+                <i>{isVietnamese ? " của " : " by "}</i>
                 <strong>{credit.author}</strong>
               </a>
             </li>

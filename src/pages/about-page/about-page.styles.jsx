@@ -35,30 +35,20 @@ export const DetailMe = styled.div`
       position: relative;
     }
   }
-  & > div {
-    width: 100%;
-    margin: 0.5rem 0;
-  }
+
   @media ${devices.laptop} {
     flex-direction: row;
     align-items: center;
     & > div {
-      width: 60%;
-      margin: 1rem 0.4rem;
       z-index: 4;
-
-      &:last-child {
-        width: 40%;
+      &:first-child {
+        width: 60%;
+        margin-right: 0.5rem;
       }
-    }
-  }
-  @media ${devices.widescreen} {
-    & > div:first-child {
-      width: 60%;
-      margin: 1rem;
-
       &:last-child {
         width: 40%;
+        margin-left: 0.5rem;
+
       }
     }
   }

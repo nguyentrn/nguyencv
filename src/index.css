@@ -6,6 +6,10 @@
   -webkit-touch-callout: none;
 }
 
+*:focus {
+    outline:none;
+}
+
 p {
   line-height: 1.6rem;
 }

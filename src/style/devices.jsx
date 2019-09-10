@@ -15,18 +15,3 @@ export const devices = {
   superwidescreen: `(min-width: ${size.superwidescreen})`,
   maxHeight: `(max-height: ${size.fuckheight})`
 };
-
-// -- Responsive
-// import { devices } from "./style/devices";
-// @media only screen and ${devices.mobile} {
-//
-// }
-// @media only screen and ${devices.tablet} {
-//
-// }
-// @media only screen and ${devices.laptop} {
-//
-// }
-// @media only screen and ${devices.widescreen} {
-//
-// }

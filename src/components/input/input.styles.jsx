@@ -167,13 +167,21 @@ export const TextAreaContainer = styled.div`
 
 export const SubmitContainer = styled.div`
   ${container}
-  .inp {
+  margin: 2rem 0 0;
     display: flex;
     justify-content: flex-end;
-  }
   input {
+    width: 5rem;
     padding: 1rem;
-    border: none;
-    background: red;
+    border: 1px ${theme.dark}33 solid;
+    background: ${theme.light};
+    box-shadow: 0.1rem 0.1rem 1rem 0rem ${theme.dark}33;
+    transition: 0.3s;
+    cursor:pointer;
+
+    &:hover {
+      background: ${theme.primaryColor};
+      color: ${theme.light}
+    }
   }
 `;

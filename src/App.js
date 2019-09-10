@@ -10,6 +10,8 @@ import {
   FooterDesktop,
   FooterMobile
 } from "./components/footer/footer.component";
+import CitySvg from "./components/CitySvg/CitySvg.component";
+import welcomeGreetings from "./components/welcome-greetings/welcome-greetings.component";
 import LinkWithScroll from "./components/link-with-scroll/link-with-scroll.component";
 import HomePage from "./pages/home-page/home-page.component";
 import AboutPage from "./pages/about-page/about-page.component";
@@ -40,6 +42,8 @@ function App(props) {
       <Switch>
         <Route exact path="/cv" component={CV} />
         <Route exact path="/spinner" component={Spinner} />
+        <Route exact path="/city" component={CitySvg} />
+        <Route exact path="/banner" component={welcomeGreetings} />
 
         {routes.map(route => (
           <Route

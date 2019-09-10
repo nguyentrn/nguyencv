@@ -35,7 +35,7 @@ export const TextArea = props => (
 
 export const Submit = props => (
   <SubmitContainer>
-    <label for="submit" class="inp">
+    <label for="submit">
       <input type="submit" id="submit" placeholder="Submit" />
     </label>
   </SubmitContainer>

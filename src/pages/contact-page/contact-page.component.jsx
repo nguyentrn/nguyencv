@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../../contexts/language.context";
 import {
+  GetInTouchContainer,
   ContactPageContainer,
   MessageFormContainer
 } from "./contact-page.styles";
@@ -13,56 +14,58 @@ import Input, {
 
 const contactContents = [
   {
+    firstHeadline: <h3><span>Get </span>In Touch</h3>,
+    secondHeadline: <h3><span>Leave </span>A Message</h3>,
     message: "Your message",
-    name: "Your name",
-    email: "Your email",
+    yourName: "Your name",
+    yourEmail: "Your email",
     phone: "Your phone"
   },
   {
+    firstHeadline: <h3><span>Thông tin </span>Liên hệ</h3>,
+    secondHeadline: <h3><span>Gửi </span>Tin nhắn</h3>,
     message: "Tin nhắn",
-    name: "Tên",
-    email: "Email",
+    yourName: "Tên",
+    yourEmail: "Email",
     phone: "Điện thoại"
   }
 ];
 
 const ContactPage = props => {
   const { isVietnamese } = useContext(LanguageContext);
-  const { message, name, email } = contactContents[isVietnamese ? 1 : 0];
+  const { firstHeadline, secondHeadline, message, yourName, yourEmail } = contactContents[isVietnamese ? 1 : 0];
   const handleSubmit = event => {
     event.preventDefault();
     console.log(props);
   };
   return (
     <ContactPageContainer>
-      <h3>
-        <span>Get</span> In Touch
-      </h3>{" "}
-      is an animation framework for React. It has basic animations such as fade,
-      flip, zoom, rotate and a lot of more advanced animations. It allows you to
-      control all animations with props, for example: the position, delay,
-      distance, cascade and many others. You can see them here. You can also use
-      the custom css effects. Also it has server side rendering and high order
-      components. If you prefer to use animation on scroll this framework for
-      you. Check out how it works. is an animation framework for React. It has
-      basic animations such as fade, flip, zoom, rotate and a lot of more
-      advanced animations. It allows you to control all animations with props,
-      for example: the position, delay, distance, cascade and many others. You
-      can see them here. You can also use the custom css effects. Also it has
-      server side rendering and high order components. If you prefer to use
-      animation on scroll this framework for you. Check out how it works. is an
-      animation framework for React. It has basic an
-      <h3>
-        <span>Leave</span> A Message
-      </h3>
+      {firstHeadline}
+      <GetInTouchContainer>
+        is an animation framework for React. It has basic animations such as fade,
+        flip, zoom, rotate and a lot of more advanced animations. It allows you to
+        control all animations with props, for example: the position, delay,
+        distance, cascade and many others. You can see them here. You can also use
+        the custom css effects. Also it has server side rendering and high order
+        components. If you prefer to use animation on scroll this framework for
+        you. Check out how it works. is an animation framework for React. It has
+        basic animations such as fade, flip, zoom, rotate and a lot of more
+        advanced animations. It allows you to control all animations with props,
+        for example: the position, delay, distance, cascade and many others. You
+        can see them here. You can also use the custom css effects. Also it has
+        server side rendering and high order components. If you prefer to use
+        animation on scroll this framework for you. Check out how it works. is an
+        animation framework for React. It has basic an
+      </GetInTouchContainer>
+      {secondHeadline}
       <MessageFormContainer>
-        <div class="wrapper centered">
-          <article class="letter">
-            <div class="side">
+        <div >
+          <article >
+            <div>
               <form onSubmit={handleSubmit}>
                 <TextArea label={message} />
-                <Input label={name} type="text" />
-                <Input label={email} type="email" />
+                <Input label={yourName} type="text" />
+                <Input label={yourEmail} type="email" />
                 <Submit />
               </form>
             </div>

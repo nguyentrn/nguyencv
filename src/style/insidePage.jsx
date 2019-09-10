@@ -12,11 +12,12 @@ export const InsidePage = styled.div`
   line-height: 1.6rem;
 
   & > div {
-    width: 100%;
-    margin: 0.5rem 0;
+    width: 95%;
+    margin: 2.5%;
   }
 
   & > h3 {
+    margin: 1rem 0 1.2rem;
     font-size: 1.4rem;
     span {
       color: ${theme.secondaryColor};
