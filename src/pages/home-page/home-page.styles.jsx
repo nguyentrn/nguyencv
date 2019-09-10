@@ -35,8 +35,8 @@ export const BackgroundContainer = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  background: url("https://i.pinimg.com/originals/44/6e/3b/446e3b79395a287ca32f7977dd83b290.jpg")
-    center center / cover;
+  background: url("/background.jpg")
+    top left / 105%;
   clip-path: polygon(0 0, 100% 0, 100% 31%, 50% 38%, 0 31%);
   @media ${devices.tablet} {
     clip-path: polygon(0 0, 100% 0, 100% 31%, 50% 38%, 0 31%);
