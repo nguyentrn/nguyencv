@@ -80,9 +80,9 @@ function App(props) {
                             </TransitionGroup>
                           )}
                         />
-                      </Element>{" "}
+                      </Element>
                       <FooterMobile />
-                    </PageWrapper>{" "}
+                    </PageWrapper>
                   </PageContainer>
                 </NavPageContainer>
                 <FooterDesktop />
