@@ -36,15 +36,15 @@ const contents = [
       <div>
         A <strong>Web Developer</strong> from Ho Chi Minh City. I'm{" "}
         <strong>
-          focusing on expanding my solid experience in Frontend and Single Page
+          focusing on expanding and improving my extensive experience in Frontend and Single Page
           App
         </strong>{" "}
-        development, also I have a <strong>basic knowledge in Backend</strong>{" "}
+        development. I also have a <strong>basic knowledge in Backend</strong>{" "}
         which I learned from university.
         <br />
         My passion is applying what did I know about technology to build
-        something useful (for me and for everyone). That motivates me to learn
-        new stuffs day by day and to{" "}
+        something useful (for me and everyone). That motivates me to learn
+        new stuff day by day and to{" "}
         <strong>become a Senior Fullstack Developer</strong> one day !
       </div>
     ),
@@ -58,16 +58,16 @@ const contents = [
           <strong>here</strong>
         </LinkWithScroll>
         <span> and I </span>
-        will response to you soon! <br /> Thank for visiting !
+        will respond to you soon! <br /> Thank for visiting !
       </h1>
     ),
     ctaComment:
-      "About *: I love Node and Python but can't afford to meet these girls's conditions for now. But I would pleasefully try for a date in case they give me a chance !",
+      "About *: I love Node and Python but can't afford to meet these girls's conditions for now. But I would be willing to try for a date in case they give me a chance !",
 
     age: "Age :",
     exactAge: `${myAge.years} years ${myAge.months} months ${
       myAge.date < 0 ? myAge.date + 30 : myAge.date
-    } days old`,
+      } days old`,
     phone: "Phone :",
     email: "Email :",
     address: "Address :",
@@ -119,7 +119,7 @@ const contents = [
     age: "Tuổi :",
     exactAge: `${myAge.years} năm ${myAge.months} tháng ${
       myAge.date < 0 ? myAge.date + 30 : myAge.date
-    } ngày `,
+      } ngày `,
     phone: "Điện thoại :",
     email: "Email :",
     address: "Địa chỉ :",
@@ -261,8 +261,8 @@ const AboutPage = props => {
                         <div>{myAddress}</div>
                       </span>
                     ) : (
-                      myAddress
-                    )}
+                        myAddress
+                      )}
                   </Fade>
                 )}
               </Transition>
