@@ -1,7 +1,6 @@
-import React, { useState, useContext } from 'react';
-import { SwitchTransition, Transition } from 'react-transition-group';
+import React, { useContext } from 'react';
 import { LanguageContext } from '../../contexts/language.context';
-import { AboutPageContainer, DetailMe, CallInAction, DetailThis, Fade } from './about-page.styles';
+import { AboutPageContainer, DetailMe, CallInAction, DetailThis } from './about-page.styles';
 import Line from '../../components/line/line.component';
 // import NextButton from "../../components/next-button/next-button.component";
 // import { FirstButton } from "../../style/insideCvLayout";
@@ -10,7 +9,7 @@ import { aboutPageContents, stuffsUsed, myAge } from './about-page.contents';
 
 const AboutPage = ({ executeScroll }) => {
   const { isVietnamese } = useContext(LanguageContext);
-  const [isMouseEnter, setIsMouseEnter] = useState(false);
+  // const [isMouseEnter, setIsMouseEnter] = useState(false);
   const {
     firstHeading,
     hello,
@@ -18,12 +17,12 @@ const AboutPage = ({ executeScroll }) => {
     callInAction,
     ctaComment,
     age,
-    exactAge,
+    // exactAge,
     phone,
     email,
     address,
     myAddress,
-    exactAddress,
+    // exactAddress,
     primaryHeading2,
     secondaryHeading2,
   } = aboutPageContents[isVietnamese ? 1 : 0];
@@ -61,7 +60,6 @@ const AboutPage = ({ executeScroll }) => {
         {callInAction}
         <h4>{ctaComment}</h4>
       </CallInAction>
-      <Line />
       <h3>
         <span>{primaryHeading2}</span> {secondaryHeading2}
       </h3>

@@ -71,7 +71,7 @@ export const aboutPageContents = [
   {
     firstHeading: (
       <h3>
-        <span>Mô tả</span>
+        <span>Mô tả </span>
         Bản thân
       </h3>
     ),

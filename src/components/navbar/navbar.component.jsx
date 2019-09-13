@@ -19,7 +19,7 @@ const Navbar = () => {
   const icons = [
     { ic: FaUser, label: about, path: '/about' },
     { ic: FaFileAlt, label: resume, path: '/resume' },
-    { ic: FaCode, label: note, path: '/' },
+    { ic: FaCode, label: note, path: '/note' },
     { ic: FaRocketchat, label: contact, path: '/contact' },
   ];
   return (

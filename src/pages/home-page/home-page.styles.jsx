@@ -90,12 +90,12 @@ export const InfoContainer = styled.div`
   position: relative;
   /* top:1%; */
   display: flex;
-  flex-direction:column;
-  justify-content:space-around;
-  height:40%;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 40%;
 
   & > div {
-    margin-bottom: 1.4rem;
+    margin: 1rem 0 0.4rem;
   }
 
   h1 {
@@ -103,30 +103,29 @@ export const InfoContainer = styled.div`
     letter-spacing: 0.2rem;
     font-weight: 300;
     span {
-      display:block;
+      display: block;
     }
   }
-/*   
+  /*   
   &>span {      
     margin-bottom: 0.75rem;
   } */
   @media ${devices.laptop} {
-    /* bottom: 4%; */
-    /* &>span {
+  }
+  /* bottom: 4%; */
+  /* &>span {
     margin-top: 0.5rem;
     margin-bottom: 1.75rem;
   } */
 
   @media (orientation: landscape) and (max-height: 450px) {
-    &>span {
+    & > span {
       display: none;
     }
   }
-
 `;
 
 export const StyledTypist = styled.div`
-  /* margin: 1rem; */
   color: ${theme.light};
   font-weight: 300;
   background: linear-gradient(
@@ -162,48 +161,69 @@ export const StyledTypist = styled.div`
 `;
 
 export const DescriptionContainer = styled.div`
-z-index:5;
-font-size: 0.9rem;
-font-weight: 600;
+  z-index: 5;
+  font-size: 0.9rem;
+  font-weight: 600;
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 0;
   -webkit-tap-highlight-color: transparent;
 
-  a {
+  & > div {
     display: flex;
-    margin: 0.4rem;
+    width: 50%;
+  }
+`;
+export const HomePageButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  svg {
+    height: 100%;
+    width: 100%;
+    fill: none;
+    stroke-width: 5;
+
+    polyline:first-child {
+      stroke: none;
+      fill: ${theme.secondaryColor}07;
+      transition: all 0.6s ease-out;
+    }
+
+    polyline:last-child {
+      stroke: ${theme.secondaryColor}44;
+      stroke-dasharray: 20 420;
+      stroke-dashoffset: 20;
+      transition: all 1.2s ease-out;
+    }
   }
 
-  h3 {
-    margin-left: 0.5rem
+  span {
+    position: absolute;
+    margin: auto 0;
+    text-transform: uppercase;
   }
- 
 
-  @media ${devices.laptop} {
-    bottom: 0;
-    font-size: 0.8rem;
+  &:hover {
+    polyline:first-child {
+      fill: ${theme.secondaryColor}33;
+    }
 
-  }  
-
-  @media ${devices.widescreen} {
-    font-size: 0.9rem;
-
-  }  
-  @media  (max-height: 600px) {
-
-  justify-content: space-between;
+    polyline:last-child {
+      stroke-dashoffset: -420;
+    }
   }
-  @media (orientation: landscape) and (max-height: 360px) {
-      display: none;
-    
-  }
-/* 
-  
-
-  @media ${devices.laptop} {
-    bottom: 0;
-  }  */
+  /* <div class="frame">
+	<div class="button">
+		<span>Hover Me</span>
+		<svg>
+		<polyline class="o1" points="0 0, 150 0, 150 55, 0 55, 0 0"></polyline>
+		<polyline class="o2" points="0 0, 150 0, 150 55, 0 55, 0 0"></polyline>
+	</svg>
+	</div>
+	
+</div> */
 `;

@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
-import { theme } from "../../style/theme";
+import styled, { keyframes } from 'styled-components';
+import { theme } from '../../style/theme';
 // import { devices } from "../../style/devices";
 
 const typewriter = keyframes`
@@ -48,17 +48,16 @@ export const TypingTextElement = styled.div`
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.15em; /* Adjust as needed */
   animation: ${typewriter} 2200ms steps(44) 1s 1 normal both,
-    ${blinkTextCursor} 500ms steps(44) ${props => props.infinite || "infinite"}
-      normal;
-  animation-delay: ${props => props.delay || "1s"};
+    ${blinkTextCursor} 500ms steps(44) ${props => props.infinite || 'infinite'} normal;
+  animation-delay: ${props => props.delay || '1s'};
 `;
 
 export const TypingTextContainer = styled.div`
   color: ${theme.dark};
-  letter-spacing: 0.005rem;
-  margin: 0 0 0.5rem;
-  font-size: 0.85rem;
-  font-family: "NguyenMono", monospace;
+  letter-spacing: -0.5rem;
+  margin: 0 0 0.7rem;
+  font-size: 0.88rem;
+  font-family: 'NguyenMono', monospace;
   font-weight: bold;
 
   @media (max-height: 600px) {

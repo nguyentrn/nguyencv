@@ -10,7 +10,7 @@ export const DetailMe = styled.div`
   flex-direction: column;
   width: 100%;
   position: relative;
-
+  align-items: center;
   h4 {
     margin-bottom: 0.2rem;
     letter-spacing: 0.15rem;
@@ -21,9 +21,15 @@ export const DetailMe = styled.div`
     justify-content: space-between;
   }
 
+  & > div {
+    &:last-child {
+      margin: 1rem;
+      width: 75%;
+    }
+  }
+
   @media ${devices.laptop} {
     flex-direction: row;
-
     & > div {
       &:first-child {
         width: 60%;
@@ -90,7 +96,7 @@ export const CallInAction = styled.div`
   h4 {
     color: ${theme.dark};
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 2;
     font-size: 0.8rem;
     margin-left: 3rem;
     margin-top: 4rem;

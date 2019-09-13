@@ -17,7 +17,7 @@ export const InsideCvLayoutContainer = styled.span`
 
   & > div {
     margin: 0.5rem auto;
-    width: 96%;
+    width: 93%;
   }
 
   & > h3 {

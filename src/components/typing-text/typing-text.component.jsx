@@ -1,13 +1,10 @@
-import React from "react";
-import {
-  TypingTextContainer,
-  TypingTextElement
-} from "../../components/typing-text/typing-text.styles";
+import React from 'react';
+import { TypingTextContainer, TypingTextElement } from './typing-text.styles';
 
-const TypingText = props => (
+const TypingText = ({ children, infinite, delay }) => (
   <TypingTextContainer>
-    <TypingTextElement infinite={props.infinite} delay={props.delay}>
-      {props.children}
+    <TypingTextElement infinite={infinite} delay={delay}>
+      {children}
     </TypingTextElement>
   </TypingTextContainer>
 );
