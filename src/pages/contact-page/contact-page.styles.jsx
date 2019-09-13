@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { devices } from "../../style/devices";
-import InsideCvLayout from "../../style/inside-cv-layout/inside-cv-layout.component";
-import { theme } from "../../style/theme";
+import styled from 'styled-components';
+import { devices } from '../../style/devices';
+import InsideCvLayout from '../../style/inside-cv-layout/inside-cv-layout.component';
+import { theme } from '../../style/theme';
 
 export const ContactPageContainer = styled(InsideCvLayout)`
   position: relative;
@@ -32,14 +32,13 @@ export const MessageFormContainer = styled.div`
         text-align: right;
       }
     }
-
   }
 
   @media ${devices.laptop} {
-    padding:0 4rem
+    padding: 0 4rem;
   }
 `;
 
 export const GetInTouchContainer = styled.div`
-  z-index:5;
-`
+  z-index: 5;
+`;

@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components";
-import { theme } from "../../style/theme";
-import { devices } from "../../style/devices";
+import styled, { keyframes } from 'styled-components';
+import { theme } from '../../style/theme';
+import { devices } from '../../style/devices';
 
 const textclip = keyframes`
   to {
@@ -19,7 +19,7 @@ export const HomePageContainer = styled.div`
   min-height: 100%;
   z-index: 2;
   /* margin-bottom: 1rem; */
-  margin-top:0;
+  margin-top: 0;
 
   @media ${devices.laptop} {
     /* margin:0; */
@@ -28,7 +28,6 @@ export const HomePageContainer = styled.div`
     width: 31%;
     min-width: 31%;
     margin-bottom: 0;
-
   }
   @media ${devices.widescreen} {
     width: 30%;
@@ -40,9 +39,8 @@ export const BackgroundContainer = styled.div`
   width: 100%;
   height: 50%;
   position: absolute;
-  top:0;
-  background: url("/background.jpg")  no-repeat
-    top center / cover;
+  top: 0;
+  background: url('/background.jpg') no-repeat top center / cover;
   clip-path: polygon(0 0, 100% 0, 100% 62%, 50% 76%, 0 62%);
   @media ${devices.tablet} {
     /* clip-path: polygon(0 0, 100% 0, 100% 31%, 50% 38%, 0 31%); */
@@ -54,7 +52,7 @@ export const BackgroundContainer = styled.div`
 `;
 
 export const AvatarContainer = styled.div`
-  width: 50%;
+  width: 47%;
   z-index: 1;
   position: relative;
 
@@ -94,13 +92,18 @@ export const InfoContainer = styled.div`
   display: flex;
   flex-direction:column;
   justify-content:space-around;
-height:40%;
+  height:40%;
+
+  & > div {
+    margin-bottom: 1.4rem;
+  }
+
   h1 {
     line-height: 2.2rem;
     letter-spacing: 0.2rem;
     font-weight: 300;
     span {
-    display:block;
+      display:block;
     }
   }
 /*   
@@ -119,10 +122,7 @@ height:40%;
       display: none;
     }
   }
-/* 
-  @media (orientation: landscape) and (max-width: 400px) {
-    bottom: 7%;
-  } */
+
 `;
 
 export const StyledTypist = styled.div`

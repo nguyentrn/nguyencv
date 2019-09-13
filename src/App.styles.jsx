@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { devices } from "./style/devices";
-import { theme } from "./style/theme";
-import { scrollBar } from "./style/scrollBar";
+import styled from 'styled-components';
+import { devices } from './style/devices';
+import { theme } from './style/theme';
+import { scrollBar } from './style/scrollBar';
 
 export const AppContainer = styled.div`
   background: ${theme.gradient};
@@ -10,11 +10,10 @@ export const AppContainer = styled.div`
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
-          flex-direction: column;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   overflow: hidden;
 `;
-
 
 export const PageContainer = styled.div`
   display: flex;
@@ -23,33 +22,33 @@ export const PageContainer = styled.div`
   flex-direction: column;
   background: ${theme.light};
 
-  @media only screen and (max-width:1023px) {
+  @media (max-width: 1023px) {
     overflow-y: scroll;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     ${scrollBar}
   }
 
-  @media only screen and ${devices.mobile} {
+  @media ${devices.mobile} {
     margin: auto;
     width: 400px;
   }
-  @media only screen and ${devices.tablet} {
+  @media ${devices.tablet} {
     margin: auto;
     width: 500px;
     height: 94%;
   }
-  @media only screen and ${devices.laptop} {
+  @media ${devices.laptop} {
     margin: 3% auto 0;
     height: 90%;
     flex-direction: row;
     width: 990px;
-    background:none;
+    background: none;
   }
-  @media only screen and ${devices.widescreen} {
+  @media ${devices.widescreen} {
     width: 1150px;
   }
-  @media only screen and ${devices.superwidescreen} {
+  @media ${devices.superwidescreen} {
     width: 80%;
   }
 

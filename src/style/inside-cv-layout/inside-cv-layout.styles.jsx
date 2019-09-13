@@ -1,13 +1,13 @@
-import styled from "styled-components";
-import { theme } from "../theme";
-import { devices } from "../devices";
-import { scrollBar } from "../scrollBar";
+import styled from 'styled-components';
+import { theme } from '../theme';
+import { devices } from '../devices';
+import { scrollBar } from '../scrollBar';
 
 export const InsideCvLayoutContainer = styled.span`
-  z-index:1;
+  z-index: 1;
   margin-top: 2rem;
-  height: 90%;
-  flex-grow:1;
+  /* height: 90%; */
+  /* flex-grow: 1; */
   padding: 1.5rem 1.5rem 5rem;
   display: flex;
   font-size: 0.8rem;
@@ -16,12 +16,12 @@ export const InsideCvLayoutContainer = styled.span`
   line-height: 1.6rem;
 
   & > div {
-    margin:0.5rem auto;
+    margin: 0.5rem auto;
     width: 96%;
   }
 
   & > h3 {
-    margin: 0.5rem 0 ;
+    margin: 0.5rem 0;
     font-size: 1.4rem;
     span {
       color: ${theme.secondaryColor};

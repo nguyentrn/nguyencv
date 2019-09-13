@@ -1,52 +1,33 @@
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
-import { devices } from "../../style/devices";
-import { theme } from "../../style/theme";
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import { devices } from '../../style/devices';
+import { theme } from '../../style/theme';
 
 export const NavbarContainer = styled.div`
-  /* display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; */
-  /* width: 100%;
-  border-radius: 0.4rem; */
   z-index: 10;
   position: sticky;
   position: -webkit-sticky;
-  top:0px;
-/* 
-  @media ${devices.laptop} {
-    max-width:4.5rem;
-    margin: 4rem 1rem 0 0;
-    flex-direction: column;
-    position: relative;
-    z-index: 0;
-
-  } */
+  top: 0px;
 `;
 
 export const NavbarWrapper = styled.div`
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  flex-grow:1;
+  flex-grow: 1;
   @media ${devices.laptop} {
-    max-width:4.5rem;
+    max-width: 4.5rem;
     margin: 2rem 1rem 0 0;
     flex-direction: column;
     position: relative;
     z-index: 0;
   }
-`
-
+`;
 
 export const StyledNavLink = styled(NavLink)`
-  /* width: 55%; */
-  flex-grow:1;
-
+  flex-grow: 1;
   text-align: center;
-  padding: 0.5rem 0.3rem 0.2rem;
+  padding: 0.4rem 0 0;
   color: ${theme.dark};
   background: ${theme.light};
   font-size: 0.7rem;
@@ -65,19 +46,24 @@ export const StyledNavLink = styled(NavLink)`
     border-bottom: 1px solid ${theme.neutralColor};
   }
 
+  p {
+    margin-bottom: 0.1rem;
+    line-height: 1rem;
+  }
+
   h1 {
     font-size: 1rem;
-    margin-bottom: -0.4rem;    z-index: 10;
-
+    margin-bottom: -0.4rem;
+    z-index: 10;
   }
 
   &:hover {
     background: ${theme.primaryColor};
-    color: ${theme.lighterColor};    z-index: 10;
-
+    color: ${theme.lighterColor};
+    z-index: 10;
   }
 
-  @media only screen and ${devices.laptop} {
+  @media ${devices.laptop} {
     box-shadow: 0.5rem 0.5rem 1rem 0.1rem rgba(0, 0, 0, 0.15);
     display: flex;
     justify-content: center;
@@ -92,7 +78,7 @@ export const StyledNavLink = styled(NavLink)`
     }
 
     &:after {
-      content: "";
+      content: '';
       border: 1px solid ${theme.neutralColor};
       width: 60%;
     }
