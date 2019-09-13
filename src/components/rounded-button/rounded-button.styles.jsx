@@ -23,7 +23,7 @@ export const StyledRoundedButton = styled.label`
   border-radius: 999px;
 
   z-index: 3;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: none;
   input[type="checkbox"].switch {
     position: absolute;
     opacity: 0;
@@ -40,6 +40,7 @@ export const StyledRoundedButton = styled.label`
     transition-duration: 0.4s;
     -webkit-transition-property: background-color, box-shadow;
     transition-property: background-color, box-shadow;
+    transition-timing-function: ease-in-out;
     cursor: pointer;
     user-select: none;
 
@@ -94,6 +95,7 @@ export const StyledRoundedButton = styled.label`
     transition-duration: 0.4s;
     -webkit-transition-property: transform, background-color;
     transition-property: transform, background-color;
+    transition-timing-function: ease-in-out;
     pointer-events: none;
     margin-top: 0.1rem;
     margin-left: 0.1rem;

@@ -1,25 +1,10 @@
-import styled from "styled-components";
-import { devices } from "../../style/devices";
-import { theme } from "../../style/theme";
-import { Element } from "react-scroll";
+import { css } from 'styled-components'
+import { theme } from './theme'
 
-export const DetailContainer = styled(Element)`
-  width: 100%;
-  display: inline-block;
-  position: relative;
-  box-shadow: 1rem 1rem 1.5rem 0.5rem rgba(0, 0, 0, 0.2);
-  @media ${devices.laptop} {
-    min-height: 90%;
-    overflow-y: scroll;
-    margin: auto;
-    /* overflow-x: hidden; */
-
-    & > div {
-      height: 50%;
-    }
-
+export const scrollBar = css`
     &::-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
       background-color: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
     }
@@ -27,7 +12,7 @@ export const DetailContainer = styled(Element)`
     &::-webkit-scrollbar {
       border-radius: 10px;
       height: 80%;
-      width: 0.2rem;
+      max-width: 0.2rem;
       background-color: rgba(255, 255, 255, 0);
     }
 
@@ -42,5 +27,5 @@ export const DetailContainer = styled(Element)`
         ${theme.primaryColor} 100%
       );
     }
-  }
-`;
+`
+

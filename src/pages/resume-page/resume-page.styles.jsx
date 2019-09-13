@@ -1,10 +1,11 @@
 import styled from "styled-components";
 // import { devices } from "../../style/devices";
 // import { theme } from "../../style/theme";
-import { InsidePage } from "../../style/insidePage";
+import InsideCvLayout from "../../style/inside-cv-layout/inside-cv-layout.component";
 
-export const ResumePageContainer = styled(InsidePage)`
+export const ResumePageContainer = styled(InsideCvLayout)`
   position: relative;
+
 `;
 export const Education = styled.div`
   & > h1 {

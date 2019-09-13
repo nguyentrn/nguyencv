@@ -18,12 +18,17 @@ export const HomePageContainer = styled.div`
   color: ${theme.dark};
   min-height: 100%;
   z-index: 2;
+  /* margin-bottom: 1rem; */
+  margin-top:0;
 
   @media ${devices.laptop} {
+    /* margin:0; */
     border-radius: 0.3rem;
     box-shadow: 0.4rem 0.4rem 1.5rem 0.5rem rgba(0, 0, 0, 0.2);
     width: 31%;
     min-width: 31%;
+    margin-bottom: 0;
+
   }
   @media ${devices.widescreen} {
     width: 30%;
@@ -33,17 +38,18 @@ export const HomePageContainer = styled.div`
 
 export const BackgroundContainer = styled.div`
   width: 100%;
-  height: 100%;
+  height: 50%;
   position: absolute;
-  background: url("/background.jpg")
-    top left / 105%;
-  clip-path: polygon(0 0, 100% 0, 100% 31%, 50% 38%, 0 31%);
+  top:0;
+  background: url("/background.jpg")  no-repeat
+    top center / cover;
+  clip-path: polygon(0 0, 100% 0, 100% 62%, 50% 76%, 0 62%);
   @media ${devices.tablet} {
-    clip-path: polygon(0 0, 100% 0, 100% 31%, 50% 38%, 0 31%);
+    /* clip-path: polygon(0 0, 100% 0, 100% 31%, 50% 38%, 0 31%); */
   }
 
   @media (max-height: 450px) {
-    clip-path: polygon(0 0, 100% 0, 100% 25%, 50% 32%, 0 25%);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 64%, 0 50%);
   }
 `;
 
@@ -82,7 +88,7 @@ export const AvatarContainer = styled.div`
 
 export const InfoContainer = styled.div`
   text-align: center;
-  z-index: 1;
+  z-index: 2;
   position: relative;
   /* top:1%; */
   display: flex;

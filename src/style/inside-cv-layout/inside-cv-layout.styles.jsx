@@ -1,27 +1,39 @@
 import styled from "styled-components";
-import { theme } from "./theme";
-import { devices } from "./devices";
+import { theme } from "../theme";
+import { devices } from "../devices";
+import { scrollBar } from "../scrollBar";
 
-export const InsidePage = styled.div`
+export const InsideCvLayoutContainer = styled.span`
+  z-index:1;
+  margin-top: 2rem;
+  height: 90%;
+  flex-grow:1;
   padding: 1.5rem 1.5rem 5rem;
   display: flex;
   font-size: 0.8rem;
   flex-direction: column;
-  min-height: 10rem;
-  background-color: ${theme.light};
+  background: ${theme.light};
   line-height: 1.6rem;
 
   & > div {
-    width: 95%;
-    margin: 2.5%;
+    margin:0.5rem auto;
+    width: 96%;
   }
 
   & > h3 {
-    margin: 1rem 0 1.2rem;
+    margin: 0.5rem 0 ;
     font-size: 1.4rem;
     span {
       color: ${theme.secondaryColor};
     }
+  }
+  @media ${devices.laptop} {
+    margin: auto;
+    height: 90%;
+    align-self: center;
+    overflow-y: scroll;
+    box-shadow: 0.5rem 0.5rem 1rem 0.1rem ${theme.dark}77;
+    ${scrollBar}
   }
 `;
 

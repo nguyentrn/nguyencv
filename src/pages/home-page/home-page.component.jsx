@@ -11,7 +11,7 @@ import {
 } from "./home-page.styles";
 import TypingText from "../../components/typing-text/typing-text.component";
 import { SeparatorBottom } from "../../components/separator/separator.component";
-import LinkWithScroll from "../../components/link-with-scroll/link-with-scroll.component";
+// import LinkWithScroll from "../../components/link-with-scroll/link-with-scroll.component";
 import SocialButtons from "../../components/social-button/social-button.component";
 
 const HomePage = props => {
@@ -34,19 +34,19 @@ const HomePage = props => {
       </InfoContainer>
       <DescriptionContainer>
         <React.Fragment>
-          <LinkWithScroll link={"cv"} download>
-            <div>{isVietnamese ? "TẢI CV" : "DOWNLOAD CV"}</div>
-            <h3>
-              <FaFileDownload />
-            </h3>
-          </LinkWithScroll>
+          {/* <LinkWithScroll link={"cv"} download> */}
+          <div>{isVietnamese ? "TẢI CV" : "DOWNLOAD CV"}</div>
+          <h3>
+            <FaFileDownload />
+          </h3>
+          {/* </LinkWithScroll> */}
 
-          <LinkWithScroll link={"contact"}>
-            <div>{isVietnamese ? "LIÊN HỆ" : "CONTACT ME"}</div>
-            <h3>
-              <FaRegAddressCard />
-            </h3>
-          </LinkWithScroll>
+          {/* <LinkWithScroll link={"contact"}> */}
+          <div>{isVietnamese ? "LIÊN HỆ" : "CONTACT ME"}</div>
+          <h3>
+            <FaRegAddressCard />
+          </h3>
+          {/* </LinkWithScroll> */}
         </React.Fragment>
       </DescriptionContainer>
       <BackgroundContainer />

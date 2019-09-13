@@ -26,19 +26,19 @@ const LinkWithScroll = ({ link, ...props }) => (
         </LinkRouter>
       </LinkScroll>
     ) : (
-      <LinkScroll
-        to="detailNavigate"
-        offset={-60}
-        spy={true}
-        smooth={true}
-        duration={0}
-        containerId="navigate"
-      >
-        <LinkRouter to={`/${link ? link.toLowerCase() : ""}`}>
-          {props.children}
-        </LinkRouter>
-      </LinkScroll>
-    )}
+        <LinkScroll
+          to="detailNavigate"
+          offset={-60}
+          spy={true}
+          smooth={true}
+          duration={0}
+          containerId="navigate"
+        >
+          <LinkRouter to={`/${link ? link.toLowerCase() : ""}`}>
+            {props.children}
+          </LinkRouter>
+        </LinkScroll>
+      )}
   </LinkWithScrollContainer>
 );
 

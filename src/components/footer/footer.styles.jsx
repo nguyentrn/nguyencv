@@ -51,7 +51,7 @@ export const HeartIcon = styled.span`
   width: 1rem;
   height: 0.9rem;
   display: inline-block;
-  overflow: hidden;
+  /* overflow: hidden; */
   animation: ${pounding} 0.5s linear infinite alternate;
   line-height: 1rem;
 

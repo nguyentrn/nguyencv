@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { devices } from "../../style/devices";
 // import { theme } from "../../style/theme";
-import { InsidePage } from "../../style/insidePage";
+import InsideCvLayout from "../../style/inside-cv-layout/inside-cv-layout.component";
 
-export const WelcomeContainer = styled(InsidePage)`
+export const WelcomeContainer = styled(InsideCvLayout)`
   position: relative;
   padding-top: 4rem;
   padding-bottom: 11rem;
@@ -24,7 +24,6 @@ export const BackgroundContainer = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  overflow: hidden;
 
   @media ${devices.laptop} {
     margin-left: 1rem;

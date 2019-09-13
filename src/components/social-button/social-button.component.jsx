@@ -6,7 +6,7 @@ const openNewWindow = link => () => window.open(link, "_blank");
 
 const SocialButtons = () => (
   <SocialButtonContainer>
-    <div class="effect varrius">
+    <div className="effect varrius">
       <button onClick={openNewWindow("https://github.com/nguyentrn/")}>
         <FiGithub size={20} />
       </button>

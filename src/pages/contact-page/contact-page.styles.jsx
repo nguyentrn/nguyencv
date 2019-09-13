@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { devices } from "../../style/devices";
-import { InsidePage } from "../../style/insidePage";
+import InsideCvLayout from "../../style/inside-cv-layout/inside-cv-layout.component";
 import { theme } from "../../style/theme";
 
-export const ContactPageContainer = styled(InsidePage)`
+export const ContactPageContainer = styled(InsideCvLayout)`
   position: relative;
 `;
 

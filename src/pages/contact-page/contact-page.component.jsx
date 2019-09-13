@@ -5,8 +5,8 @@ import {
   ContactPageContainer,
   MessageFormContainer
 } from "./contact-page.styles";
-import BackButton from "../../components/back-button/back-button.component";
-import { FirstButton } from "../../style/insidePage";
+// import BackButton from "../../components/back-button/back-button.component";
+// import { FirstButton } from "../../style/insideCvLayout";
 import Input, {
   TextArea,
   Submit
@@ -31,15 +31,14 @@ const contactContents = [
   }
 ];
 
-const ContactPage = props => {
+const ContactPage = ({ executeScroll }) => {
   const { isVietnamese } = useContext(LanguageContext);
   const { firstHeadline, secondHeadline, message, yourName, yourEmail } = contactContents[isVietnamese ? 1 : 0];
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(props);
   };
   return (
-    <ContactPageContainer>
+    <ContactPageContainer executeScroll={executeScroll}>
       {firstHeadline}
       <GetInTouchContainer>
         is an animation framework for React. It has basic animations such as fade,
@@ -85,9 +84,9 @@ const ContactPage = props => {
       effects. Also it has server side rendering and high order components. If
       you prefer to use animation on scroll this framework for you. Check out
       how it works.
-      <FirstButton>
+      {/* <FirstButton>
         <BackButton name={"note"} />
-      </FirstButton>
+      </FirstButton> */}
     </ContactPageContainer>
   );
 };

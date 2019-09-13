@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import { LanguageContext } from "../../contexts/language.context";
-import { NavbarContainer, StyledNavLink } from "./navbar.styles";
+import { NavbarContainer, NavbarWrapper, StyledNavLink } from "./navbar.styles";
 import { FaUser, FaFileAlt, FaCode, FaRocketchat } from "react-icons/fa";
 
 const contents = [
@@ -19,10 +19,10 @@ const Navbar = () => {
   const { about, resume, note, contact } = contents[isVietnamese ? 1 : 0];
 
   return (
-    <div>
-      <NavbarContainer>
+    <NavbarContainer>
+      <NavbarWrapper>
         <StyledNavLink exact to="/about">
-          <div>
+          <div >
             <FaUser size={25} />
           </div>
           <p>{about}</p>
@@ -45,8 +45,8 @@ const Navbar = () => {
           </div>
           <p>{contact}</p>
         </StyledNavLink>
-      </NavbarContainer>
-    </div>
+      </NavbarWrapper>
+    </NavbarContainer>
   );
 };
 

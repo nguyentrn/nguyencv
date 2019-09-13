@@ -1,20 +1,34 @@
 import styled from "styled-components";
 import { devices } from "./style/devices";
 import { theme } from "./style/theme";
+import { scrollBar } from "./style/scrollBar";
 
 export const AppContainer = styled.div`
-  height: 100vh;
   background: ${theme.gradient};
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+          flex-direction: column;
+          align-items: center;
+  overflow: hidden;
 `;
 
-export const NavPageContainer = styled.div`
+
+export const PageContainer = styled.div`
   display: flex;
-  width: 95%;
+  width: 100%;
   height: 100%;
   flex-direction: column;
+  background: ${theme.light};
+
+  @media only screen and (max-width:1023px) {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    ${scrollBar}
+  }
 
   @media only screen and ${devices.mobile} {
     margin: auto;
@@ -26,11 +40,11 @@ export const NavPageContainer = styled.div`
     height: 94%;
   }
   @media only screen and ${devices.laptop} {
-    margin: 0.5% auto 0;
+    margin: 3% auto 0;
     height: 90%;
     flex-direction: row;
     width: 990px;
-    overflow: visible;
+    background:none;
   }
   @media only screen and ${devices.widescreen} {
     width: 1150px;
@@ -41,69 +55,5 @@ export const NavPageContainer = styled.div`
 
   @media (orientation: landscape) and (max-width: 1023px) and (max-height: 500px) {
     width: 90%;
-  }
-`;
-
-export const PageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  border-radius: 0 0 0.5rem 0.5rem;
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-
-  & > div {
-    height: 50%;
-  }
-
-  &::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    background-color: ${theme.light};
-    border-radius: 10px;
-  }
-
-  &::-webkit-scrollbar {
-    width: 2px;
-    background-color: ${theme.light};
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: ${theme.light};
-    background-image: -webkit-linear-gradient(
-      top,
-      ${theme.lighterColor} 0%,
-      ${theme.neutralColor} 50%,
-      ${theme.secondaryColor} 51%,
-      ${theme.primaryColor} 100%
-    );
-  }
-
-  @media only screen and ${devices.mobile} {
-    margin: auto;
-    width: 400px;
-    height: 100%;
-  }
-  @media only screen and ${devices.tablet} {
-    width: 500px;
-  }
-  @media only screen and ${devices.laptop} {
-    flex-direction: row;
-    width: 990px;
-    overflow: visible;
-    margin-left: 1rem;
-    height: 90%;
-  }
-  @media only screen and ${devices.widescreen} {
-    width: 1100px;
-  }
-  @media only screen and ${devices.superwidescreen} {
-    width: 100%;
-  }
-
-  @media (orientation: landscape) and (max-width: 1023px) {
-    width: 100%;
   }
 `;
