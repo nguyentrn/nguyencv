@@ -1,6 +1,6 @@
-import styled, { keyframes, css } from "styled-components";
-import { theme } from "../../style/theme";
-import { devices } from "../../style/devices";
+import styled, { keyframes, css } from 'styled-components';
+import theme from '../../style/theme';
+import { devices } from '../../style/devices';
 
 const pounding = keyframes`{
 
@@ -57,7 +57,7 @@ export const HeartIcon = styled.span`
 
   &:before,
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     width: 0.5rem;

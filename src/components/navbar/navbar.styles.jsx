@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { devices } from '../../style/devices';
-import { theme } from '../../style/theme';
+import theme from '../../style/theme';
 
 export const NavbarContainer = styled.div`
   z-index: 10;

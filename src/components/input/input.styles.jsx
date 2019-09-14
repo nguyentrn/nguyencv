@@ -1,12 +1,12 @@
-import styled, { css } from "styled-components";
-import { theme } from "../../style/theme";
-import { scrollBar } from "../../style/scrollBar";
+import styled, { css } from 'styled-components';
+import theme from '../../style/theme';
+import scrollBar from '../../style/scrollBar';
 
 const container = css`
   z-index: 5;
   height: 100%;
   display: grid;
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
@@ -19,7 +19,7 @@ const container = css`
     position: relative;
     margin: auto;
     width: 100%;
-    ${"" /* max-width: 17.5rem; */}
+    ${'' /* max-width: 17.5rem; */}
     .label {
       z-index: -1;
       position: absolute;
@@ -47,7 +47,7 @@ const container = css`
 
 export const InputContainer = styled.div`
   ${container};
-  max-width: ${props => props.width || ""};
+  max-width: ${props => props.width || ''};
 
   input {
     z-index: 1;
@@ -147,8 +147,8 @@ export const TextAreaContainer = styled.div`
 export const SubmitContainer = styled.div`
   ${container}
   margin: 2rem 0 0;
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
   input {
     width: 5rem;
     padding: 1rem;
@@ -156,11 +156,11 @@ export const SubmitContainer = styled.div`
     background: ${theme.light};
     box-shadow: 0.1rem 0.1rem 1rem 0rem ${theme.dark}33;
     transition: 0.3s;
-    cursor:pointer;
+    cursor: pointer;
 
     &:hover {
       background: ${theme.primaryColor};
-      color: ${theme.light}
+      color: ${theme.light};
     }
   }
 `;

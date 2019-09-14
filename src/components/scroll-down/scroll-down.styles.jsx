@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components";
-import { devices } from "../../style/devices";
-import { theme } from "../../style/theme";
+import styled, { keyframes } from 'styled-components';
+import { devices } from '../../style/devices';
+import theme from '../../style/theme';
 
 const duration = 2.2;
 const base = 0.32;
@@ -55,13 +55,12 @@ export const ScrollDownContainer = styled.div`
     }
 
     &:nth-child(2) {
-      animation: ${moveChevron} ${duration}s ease-out ${(duration / 3) * 2}s
-        infinite;
+      animation: ${moveChevron} ${duration}s ease-out ${(duration / 3) * 2}s infinite;
     }
 
     &:before,
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       height: 100%;

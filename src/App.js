@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import React, { useRef, lazy, Suspense } from 'react';
 // import { motion, useSpring } from "framer-motion"
 import { Switch, Route } from 'react-router-dom';
@@ -24,9 +25,9 @@ const NotFoundPage = lazy(() => import('./pages/not-found-page/not-found-page.co
 const cvRoutes = [
   { path: '/', component: WelcomePage, exact: true },
   { path: '/about', component: AboutPage, exact: true },
+  { path: '/resume', component: ResumePage, exact: true },
   { path: '/note', component: NotePage, exact: true },
   { path: '/contact', component: ContactPage, exact: true },
-  { path: '/resume', component: ResumePage, exact: true },
 ];
 
 for (let i = 1; i < cvRoutes.length; i++) {
@@ -36,21 +37,13 @@ for (let i = 1; i < cvRoutes.length; i++) {
   }
 }
 
-function App(props) {
+function App() {
   const myRef = useRef(null);
   const executeScroll = () =>
     myRef.current.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
     });
-
-  const RouteInCV = cvRoute => (
-    <Route
-      exact
-      path={cvRoute.path}
-      render={props => <cvRoute.component executeScroll={executeScroll} {...props} />}
-    />
-  );
 
   return (
     <Suspense fallback={<Spinner />}>
@@ -67,9 +60,19 @@ function App(props) {
               <Route component={HomePage} />
               <span ref={myRef} />
               <Switch>
-                {console.log('a')}
                 {cvRoutes.map(cvRoute => (
-                  <RouteInCV key={cvRoute.path} {...cvRoute} />
+                  <Route
+                    key={cvRoute.path}
+                    exact
+                    path={cvRoute.path}
+                    render={() => (
+                      <cvRoute.component
+                        executeScroll={executeScroll}
+                        prevPath={cvRoute.prevPath}
+                        nextPath={cvRoute.nextPath}
+                      />
+                    )}
+                  />
                 ))}
               </Switch>
             </PageContainer>

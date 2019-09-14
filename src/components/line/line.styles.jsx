@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { theme } from "../../style/theme";
+import styled from 'styled-components';
+import theme from '../../style/theme';
 
 export const LineContainer = styled.div`
   margin: 1% 0;
@@ -35,10 +35,5 @@ export const LineCore = styled.hr`
     ${theme.neutralColor},
     ${theme.light}
   );
-  background-image: -o-linear-gradient(
-    left,
-    ${theme.light},
-    ${theme.neutralColor},
-    ${theme.light}
-  );
+  background-image: -o-linear-gradient(left, ${theme.light}, ${theme.neutralColor}, ${theme.light});
 `;

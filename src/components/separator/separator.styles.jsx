@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
-import { theme } from "../../style/theme";
-import { devices } from "../../style/devices";
+import styled, { css } from 'styled-components';
+import theme from '../../style/theme';
+import { devices } from '../../style/devices';
 
 const separatorContainer = css`
   position: absolute;

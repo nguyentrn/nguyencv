@@ -1,12 +1,12 @@
-import styled, { css, keyframes } from "styled-components";
-import { theme } from "../../style/theme";
+import styled, { css, keyframes } from 'styled-components';
+import theme from '../../style/theme';
+
 const a4Ratio = 842 / 595;
-// export const size = "100";
 
 const line = css`
   position: relative;
   &:after {
-    content: "";
+    content: '';
     background: ${theme.dark}33;
     position: absolute;
     bottom: 0;
@@ -19,7 +19,7 @@ const line = css`
 const rightLine = css`
   position: relative;
   &:after {
-    content: "";
+    content: '';
     background: ${theme.dark}33;
     position: absolute;
     bottom: 1%;
@@ -219,8 +219,8 @@ export const CVContainer = styled.div`
   grid-template-columns: 30% repeat(3, 1fr);
   grid-template-rows: 19% 81%;
   grid-template-areas:
-    "header header header header "
-    "sidebar main main main ";
+    'header header header header '
+    'sidebar main main main ';
 
   & > div {
     margin: ${props => props.size / 105}vw;
@@ -404,7 +404,6 @@ export const SkillBar = styled.div`
     background: ${theme.dark}33;
     span {
       /* animation: loader 8s ease infinite; */
-      // Change the animation fill mode 'infinite' to 'forwards' to stop the animation from repeating.
       background: ${theme.primaryColor}cc;
       color: #fff;
       padding: 0.2em;

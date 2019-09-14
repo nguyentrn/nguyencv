@@ -7,7 +7,7 @@ import Line from '../../components/line/line.component';
 import { aboutPageContents, stuffsUsed, myAge } from './about-page.contents';
 // import { SeparatorBottom } from "../../components/separator/separator.component";
 
-const AboutPage = ({ executeScroll }) => {
+const AboutPage = ({ executeScroll, prevPath, nextPath }) => {
   const { isVietnamese } = useContext(LanguageContext);
   // const [isMouseEnter, setIsMouseEnter] = useState(false);
   const {
@@ -35,7 +35,7 @@ const AboutPage = ({ executeScroll }) => {
   ];
 
   return (
-    <AboutPageContainer executeScroll={executeScroll}>
+    <AboutPageContainer executeScroll={executeScroll} prevPath={prevPath} nextPath={nextPath}>
       {firstHeading}
       <div>
         <DetailMe>
@@ -45,7 +45,7 @@ const AboutPage = ({ executeScroll }) => {
           </div>
           <div>
             {info.map(inf => (
-              <div>
+              <div key={inf.name}>
                 <h5>
                   <span>{inf.name}</span>
                   <span>{inf.value}</span>
@@ -66,11 +66,11 @@ const AboutPage = ({ executeScroll }) => {
       <DetailThis>
         <p>This website is built from scratch with React and some library</p>
         <ul>
-          {stuffsUsed.libraries.map((library, id) => (
-            <li key={id}>{library}</li>
+          {stuffsUsed.libraries.map(library => (
+            <li key={library}>{library}</li>
           ))}
-          {stuffsUsed.credits.map((credit, id) => (
-            <li key={id}>
+          {stuffsUsed.credits.map(credit => (
+            <li key={credit.link}>
               <a href={credit.link}>
                 <strong>{credit.name}</strong>
                 <i>{isVietnamese ? ' của ' : ' by '}</i>
@@ -80,12 +80,6 @@ const AboutPage = ({ executeScroll }) => {
           ))}
         </ul>
       </DetailThis>
-      {/* <FirstButton>
-        <NextButton name={"Resume"} />
-      </FirstButton> */}
-      {/* <div>
-        <SeparatorBottom />
-      </div> */}
     </AboutPageContainer>
   );
 };

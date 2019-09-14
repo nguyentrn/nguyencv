@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { devices } from '../../style/devices';
-import { theme } from '../../style/theme';
+import theme from '../../style/theme';
 import InsideCvLayout from '../../style/inside-cv-layout/inside-cv-layout.component';
 
 export const AboutPageContainer = styled(InsideCvLayout)``;
@@ -108,7 +108,7 @@ export const CallInAction = styled.div`
 
   @media ${devices.laptop} {
     h1 {
-      margin: 0 3rem;
+      margin: 0.5rem 2rem;
     }
 
     h4 {

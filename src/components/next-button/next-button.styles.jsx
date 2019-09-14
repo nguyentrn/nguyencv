@@ -1,9 +1,7 @@
-import styled, { keyframes } from "styled-components";
-import { theme } from "../../style/theme";
-import { Link } from "react-scroll";
-import LinkWithScroll from "../link-with-scroll/link-with-scroll.component";
+import styled, { keyframes } from 'styled-components';
+import theme from '../../style/theme';
 
-const color_anim = keyframes`
+const colorAnimation = keyframes`
     0% {
         fill: white;
     }
@@ -14,14 +12,16 @@ const color_anim = keyframes`
         fill: white;
     }
 `;
-export const StyledLinkWithScroll = styled(LinkWithScroll)`
+
+export const NextButtonContainer = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  ${'' /* justify-content: center;
+  align-items: center; */}
   z-index: 5;
 `;
 
-export const NextButtonContainer = styled.div`
+export const NextButtonInsider = styled.div`
   box-sizing: border-box;
   display: flex;
   padding: 0.2rem 0.5rem;
@@ -79,18 +79,16 @@ export const NextButtonContainer = styled.div`
   }
 
   &:hover path.three {
-    animation: ${color_anim} 1s infinite 0.2s;
+    animation: ${colorAnimation} 1s infinite 0.2s;
   }
 
   &:hover path.one {
     transform: translateX(0%);
-    animation: ${color_anim} 1s infinite 0.6s;
+    animation: ${colorAnimation} 1s infinite 0.6s;
   }
 
   &:hover path.two {
     transform: translateX(0%);
-    animation: ${color_anim} 1s infinite 0.4s;
+    animation: ${colorAnimation} 1s infinite 0.4s;
   }
 `;
-
-export const StyledLink = styled(Link)``;

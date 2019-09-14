@@ -44,7 +44,7 @@ const contactContents = [
   },
 ];
 
-const ContactPage = ({ executeScroll }) => {
+const ContactPage = ({ executeScroll, prevPath, nextPath }) => {
   const { isVietnamese } = useContext(LanguageContext);
   const { firstHeadline, secondHeadline, message, yourName, yourEmail } = contactContents[
     isVietnamese ? 1 : 0
@@ -53,7 +53,7 @@ const ContactPage = ({ executeScroll }) => {
     event.preventDefault();
   };
   return (
-    <ContactPageContainer executeScroll={executeScroll}>
+    <ContactPageContainer executeScroll={executeScroll} prevPath={prevPath} nextPath={nextPath}>
       {firstHeadline}
       <GetInTouchContainer>
         is an animation framework for React. It has basic animations such as fade, flip, zoom,

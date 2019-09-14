@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { theme } from "../../style/theme";
+import styled from 'styled-components';
+import theme from '../../style/theme';
 
 // ${theme.primaryColor}: #212121;
 // ${theme.light}: #fff;
@@ -46,7 +46,7 @@ export const SocialButtonContainer = styled.span`
       }
 
       &:before {
-        content: "";
+        content: '';
         display: inline-block;
         height: 100%;
         vertical-align: middle;
@@ -65,7 +65,7 @@ export const SocialButtonContainer = styled.span`
     button {
       transition: all 0.2s linear 0s;
       &:after {
-        content: "";
+        content: '';
         display: block;
         width: 90%;
         height: 90%;

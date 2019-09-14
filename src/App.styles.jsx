@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { devices } from './style/devices';
-import { theme } from './style/theme';
-import { scrollBar } from './style/scrollBar';
+import theme from './style/theme';
+import scrollBar from './style/scrollBar';
 
 export const AppContainer = styled.div`
   background: ${theme.gradient};

@@ -1,19 +1,20 @@
 import styled from 'styled-components';
-import { theme } from '../theme';
+import theme from '../theme';
 import { devices } from '../devices';
-import { scrollBar } from '../scrollBar';
+import scrollBar from '../scrollBar';
 
 export const InsideCvLayoutContainer = styled.span`
   z-index: 1;
   margin-top: 2rem;
   /* height: 90%; */
   /* flex-grow: 1; */
-  padding: 1.5rem 1.5rem 5rem;
+  padding: 1.5rem 1.5rem;
   display: flex;
   font-size: 0.8rem;
   flex-direction: column;
   background: ${theme.light};
   line-height: 1.6rem;
+  position: relative;
 
   & > div {
     margin: 0.5rem auto;
@@ -37,22 +38,32 @@ export const InsideCvLayoutContainer = styled.span`
   }
 `;
 
-export const FirstButton = styled.span`
-  position: absolute;
-  bottom: 3.5rem;
-  right: 1rem;
-
-  @media ${devices.laptop} {
-    bottom: 1rem;
-  }
+export const NavigateButton = styled.div`
+  height: 100%;
+  width: 100%;
+  ${'' /* margin: 2rem; */}
+  padding: 1rem 1rem 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 `;
 
-export const SecondButton = styled.span`
-  position: absolute;
-  right: 8rem;
-  bottom: 3.5rem;
+// export const FirstButton = styled.span`
+//   position: absolute;
+//   bottom: 3.5rem;
+//   right: 1rem;
 
-  @media ${devices.laptop} {
-    bottom: 1rem;
-  }
-`;
+//   @media ${devices.laptop} {
+//     bottom: 1rem;
+//   }
+// `;
+
+// export const SecondButton = styled.span`
+//   position: absolute;
+//   right: 8rem;
+//   bottom: 3.5rem;
+
+//   @media ${devices.laptop} {
+//     bottom: 1rem;
+//   }
+// `;

@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { theme } from '../../style/theme';
+import theme from '../../style/theme';
 // import { devices } from "../../style/devices";
 
 const typewriter = keyframes`
